@@ -2,7 +2,7 @@
 
 A consolidated learning repository for Bachelor of Computer Applications students, designed to support study, practical programming, projects, and examination preparation.
 
-> **RJU syllabus notice:** Semester-wise RJU subject names, course codes, unit counts, and unit allocations are not populated because an authoritative current RJU BCA syllabus has not been verified in the materials available for this build. No subjects are guessed or assigned to semesters. The technical notes in `Core-Computing-Notes/` are original general BCA supplementary learning material, not a claim about RJU's prescribed curriculum.
+> **RJU syllabus notice:** Semester-wise RJU subject names, course codes, unit counts, and unit allocations are not populated because an authoritative current RJU BCA syllabus has not been verified in the materials available for this build. No subjects are guessed or assigned to semesters.
 
 ## Quick navigation
 - [RJU syllabus verification register](Resources/Syllabus-Verification.md)
