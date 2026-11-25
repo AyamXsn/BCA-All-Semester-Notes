@@ -1,24 +1,27 @@
-# Semester 03
+# Semester 03 (Second Year)
 
-**RJU subject allocation: Pending official syllabus verification.**
+Official credit total for this semester: **15**.
 
-This directory is reserved for subjects confirmed by an official RJU BCA curriculum document applicable to the student's intake. It intentionally contains no guessed subject names or invented units.
+## Subjects
 
-## Study while awaiting verification
-Use the independently authored [Core Computing Notes](../Core-Computing-Notes/README.md) as supplementary learning. They are not assigned to this semester and may not all be part of the RJU curriculum.
+| Code | Subject | Credits | Category |
+|---|---|---|---|
+| HCAC-201 | [Financial Accounting](HCAC-201-Financial-Accounting/README.md) | 3 | Social Science & Management |
+| HCAC-202 | [Data Structures and Algorithm](HCAC-202-Data-Structures-and-Algorithm/README.md) | 3 | Core |
+| HCAC-203 | [Microprocessor and Assembly Language](HCAC-203-Microprocessor-and-Assembly-Language/README.md) | 3 | Core |
+| HCAC-204 | [Computer Oriented Numerical Methods](HCAC-204-Computer-Oriented-Numerical-Methods/README.md) | 3 | Core |
+| HCAC-205 | [Data Communication and Computer Networking](HCAC-205-Data-Communication-and-Computer-Networking/README.md) | 3 | Core |
 
-## Add official subjects
-For every verified subject:
-1. Create a directory named after the official course title (optionally include its verified course code).
-2. Add a subject `README.md` with semester, course code, official source, and exact unit headings.
-3. Create one Markdown file per topic under `Notes/Unit-XX/`.
-4. Add practical programs only if appropriate.
-5. Keep authentic past papers separate from AI-generated practice.
+## Verification Notes
 
-## Checklist
-- [ ] Official subject list verified for the applicable batch
-- [ ] Course codes and titles checked
-- [ ] Unit headings transcribed accurately
-- [ ] Individual topic notes prepared
-- [ ] Exercises and revision questions reviewed
-- [ ] References and source provenance recorded
+- Subject list source: [https://rju.edu.np/course/bca/](https://rju.edu.np/course/bca/) (checked 2026-11-24).
+- Details and known discrepancies: [Syllabus Verification Record](../Resources/Syllabus-Verification.md).
+
+## Navigation
+
+- [Back to repository home](../README.md)
+- [Previous-year questions for this semester](../Previous-Year-Questions/Semester-03/README.md)
+
+## Completion Status
+
+Structure created. No notes written yet.

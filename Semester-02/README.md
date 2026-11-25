@@ -1,24 +1,27 @@
-# Semester 02
+# Semester 02 (First Year)
 
-**RJU subject allocation: Pending official syllabus verification.**
+Official credit total for this semester: **16**.
 
-This directory is reserved for subjects confirmed by an official RJU BCA curriculum document applicable to the student's intake. It intentionally contains no guessed subject names or invented units.
+## Subjects
 
-## Study while awaiting verification
-Use the independently authored [Core Computing Notes](../Core-Computing-Notes/README.md) as supplementary learning. They are not assigned to this semester and may not all be part of the RJU curriculum.
+| Code | Subject | Credits | Category |
+|---|---|---|---|
+| HCASO-151 | [The Art of Social Engagement and Technology](HCASO-151-Social-Engagement-and-Technology/README.md) | 3 | Social Science |
+| HENG-152 | [Technical English](HENG-152-Technical-English/README.md) | 3 | Language |
+| HMTH-153 | [Math-II](HMTH-153-Math-II/README.md) | 3 | Mathematics |
+| HCAC-154 | [C++ Programming](HCAC-154-Cpp-Programming/README.md) | 4 | Core |
+| HCAC-155 | [Operating System](HCAC-155-Operating-System/README.md) | 3 | Core |
 
-## Add official subjects
-For every verified subject:
-1. Create a directory named after the official course title (optionally include its verified course code).
-2. Add a subject `README.md` with semester, course code, official source, and exact unit headings.
-3. Create one Markdown file per topic under `Notes/Unit-XX/`.
-4. Add practical programs only if appropriate.
-5. Keep authentic past papers separate from AI-generated practice.
+## Verification Notes
 
-## Checklist
-- [ ] Official subject list verified for the applicable batch
-- [ ] Course codes and titles checked
-- [ ] Unit headings transcribed accurately
-- [ ] Individual topic notes prepared
-- [ ] Exercises and revision questions reviewed
-- [ ] References and source provenance recorded
+- Subject list source: [https://rju.edu.np/course/bca/](https://rju.edu.np/course/bca/) (checked 2026-11-24).
+- Details and known discrepancies: [Syllabus Verification Record](../Resources/Syllabus-Verification.md).
+
+## Navigation
+
+- [Back to repository home](../README.md)
+- [Previous-year questions for this semester](../Previous-Year-Questions/Semester-02/README.md)
+
+## Completion Status
+
+Structure created. No notes written yet.

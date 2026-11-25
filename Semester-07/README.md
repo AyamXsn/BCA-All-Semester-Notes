@@ -1,24 +1,38 @@
-# Semester 07
+# Semester 07 (Fourth Year)
 
-**RJU subject allocation: Pending official syllabus verification.**
+Official credit total for this semester: **18**.
 
-This directory is reserved for subjects confirmed by an official RJU BCA curriculum document applicable to the student's intake. It intentionally contains no guessed subject names or invented units.
+## Subjects
 
-## Study while awaiting verification
-Use the independently authored [Core Computing Notes](../Core-Computing-Notes/README.md) as supplementary learning. They are not assigned to this semester and may not all be part of the RJU curriculum.
+| Code | Subject | Credits | Category |
+|---|---|---|---|
+| HCAC-401 | [Programming in Python](HCAC-401-Programming-in-Python/README.md) | 3 | Core |
+| HCAOR-402 | [Operational Research](HCAOR-402-Operational-Research/README.md) | 3 | Mathematics |
+| HCANP-403 | [Nepali-language course (title needs verification)](HCANP-403-Nepali-Language-Course/README.md) | 3 | Language |
+| HCAIN-404 | [Internships](HCAIN-404-Internships/README.md) | 3 | Internship |
 
-## Add official subjects
-For every verified subject:
-1. Create a directory named after the official course title (optionally include its verified course code).
-2. Add a subject `README.md` with semester, course code, official source, and exact unit headings.
-3. Create one Markdown file per topic under `Notes/Unit-XX/`.
-4. Add practical programs only if appropriate.
-5. Keep authentic past papers separate from AI-generated practice.
+## Elective Pool
 
-## Checklist
-- [ ] Official subject list verified for the applicable batch
-- [ ] Course codes and titles checked
-- [ ] Unit headings transcribed accurately
-- [ ] Individual topic notes prepared
-- [ ] Exercises and revision questions reviewed
-- [ ] References and source provenance recorded
+Students take Elective I and Elective II (2 courses, 3 credits each) from this pool. Folders exist for every listed elective so you can use the ones your college offers.
+
+| Code | Elective | Credits |
+|---|---|---|
+| HCAC-471 | [Cloud Computing](HCAC-471-Cloud-Computing/README.md) | 3 |
+| HCAMT-472 | [ERP](HCAMT-472-ERP/README.md) | 3 |
+| HCAC-473 | [Artificial Intelligence](HCAC-473-Artificial-Intelligence/README.md) | 3 |
+| HCAC-474 | [GIS](HCAC-474-GIS/README.md) | 3 |
+| HCAC-475 | [Data Warehousing and Data Mining](HCAC-475-Data-Warehousing-and-Data-Mining/README.md) | 3 |
+
+## Verification Notes
+
+- Subject list source: [https://rju.edu.np/course/bca/](https://rju.edu.np/course/bca/) (checked 2026-11-24).
+- Details and known discrepancies: [Syllabus Verification Record](../Resources/Syllabus-Verification.md).
+
+## Navigation
+
+- [Back to repository home](../README.md)
+- [Previous-year questions for this semester](../Previous-Year-Questions/Semester-07/README.md)
+
+## Completion Status
+
+Structure created. No notes written yet.
