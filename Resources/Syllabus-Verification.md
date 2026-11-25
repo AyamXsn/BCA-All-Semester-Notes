@@ -9,7 +9,7 @@ No authoritative current RJU BCA semester-wise syllabus has been supplied or ver
 | Semester | Subject list confirmed | Evidence |
 |---|---|---|
 | 1 | 5 | Official document |
-| 2 | 5 | Official document |
+| 2 | 5 | https://rju.edu.np/wp-content/uploads/2026/06/BCA-2nd-Sem-Syllabus.pdf |
 | 3 | 5 | Official document |
 | 4 | No | Official document required |
 | 5 | No | Official document required |
