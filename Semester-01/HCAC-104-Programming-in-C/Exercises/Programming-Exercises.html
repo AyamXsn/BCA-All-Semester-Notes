@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f6f2"><title>Programming Exercises - HCAC-104 Programming in C · RJU BCA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f7f6f2;--ink:#20251f;--muted:#74796f;--line:#e3e3da;--green:#64846d;--blue:#28647c;--white:#fffefa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.75 'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#286b80;text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:#1c4654}
+.sitebar{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(5vw,calc((100vw - 1100px)/2));background:rgba(255,254,250,.82)}
+.brand{font:600 22px Georgia,serif;color:#1c211c;text-decoration:none;letter-spacing:-1px}.brand span{color:#789b78}.sitebar a:last-child{font-size:12px;font-weight:600;text-decoration:none}
+.wrap{max-width:900px;margin:58px auto 90px;padding:0 28px}.kicker{font-size:10px;letter-spacing:2px;font-weight:700;color:#66836d;margin:0 0 14px;text-transform:uppercase}
+article{background:var(--white);border:1px solid var(--line);padding:clamp(24px,5vw,58px);box-shadow:0 15px 45px rgba(31,39,30,.045)}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif;line-height:1.2;letter-spacing:-.5px;color:#1d241e}
+h1{font-size:clamp(32px,5vw,48px);margin:0 0 25px}h2{font-size:27px;margin:42px 0 15px;padding-bottom:9px;border-bottom:1px solid var(--line)}h3{font-size:21px;margin:30px 0 12px}
+p{margin:0 0 17px;color:#4d534b}ul,ol{padding-left:25px;color:#4d534b}li{margin:5px 0}
+blockquote{margin:22px 0;padding:15px 20px;border-left:3px solid #89a98b;background:#f0f2eb;color:#646c60}blockquote p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:22px 0 28px;font-size:13px;display:block;overflow-x:auto}th,td{padding:11px 13px;text-align:left;border:1px solid #e5e6df;vertical-align:top}th{background:#edf1e9;color:#344638;font-weight:700}tr:nth-child(even) td{background:#fbfbf7}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#eff1ec;padding:2px 5px;border-radius:4px;font-size:.9em}pre{overflow:auto;background:#18211d;color:#edf3eb;padding:19px;border-radius:7px;line-height:1.55}pre code{background:none;color:inherit;padding:0}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}.pagefoot{max-width:900px;margin:-55px auto 45px;padding:0 28px;color:#888d82;font-size:11px;display:flex;justify-content:space-between;gap:20px}.pagefoot a{color:#55745e;text-decoration:none}
+@media(max-width:600px){.sitebar{height:60px;padding:0 20px}.wrap{margin:28px auto 70px;padding:0 14px}article{padding:24px 18px}h2{font-size:23px}.pagefoot{padding:0 16px;flex-direction:column}}
+</style></head><body>
+<header class="sitebar"><a class="brand" href="../../../index.html">r<span>.</span> RJU BCA</a><a href="../../../index.html">← Back to learning space</a></header>
+<main class="wrap"><p class="kicker">RJU BCA · STUDENT ARCHIVE</p><article><h1>Programming Exercises - HCAC-104 Programming in C</h1>
+<p>Practice problems for each unit. Try them yourself first. For a model approach, study the tested program mentioned in each hint. Compile with <code>gcc -Wall -Wextra -o program file.c</code> and test with several inputs, including unusual ones (zero, negative numbers, empty input).</p>
+<p><a href="../README.html">Back to subject</a></p>
+<h2>Unit I: Programming Concepts</h2>
+<ol>
+<li>Write the algorithm and draw a flowchart to find the sum of the first n natural numbers.</li>
+<li>Write pseudocode to check whether a number is positive, negative or zero.</li>
+<li>Draw a flowchart for a program that reads marks and prints &quot;Pass&quot; if marks are at least 40, otherwise &quot;Fail&quot;.</li>
+</ol>
+<h2>Unit II: Introduction to C</h2>
+<ol start="4">
+<li>Read the length and width of a rectangle and print its area and perimeter. <em>Hint: <a href="../Programs/Program-04-Area-and-Circumference-of-Circle/README.html">Program 04</a>.</em></li>
+<li>Convert a temperature from Celsius to Fahrenheit (<code>F = C * 9 / 5 + 32</code>). Watch out for integer division.</li>
+<li>Read a three-digit number and print the sum of its digits using <code>%</code> and <code>/</code>.</li>
+<li>Read two integers and swap them using a temporary variable, then without one.</li>
+<li>Print the ASCII code of a character typed by the user.</li>
+<li>Read the principal, rate and time and print simple interest.</li>
+</ol>
+<h2>Unit III: Control Structure</h2>
+<ol start="10">
+<li>Read three numbers and print them in ascending order using <code>if</code>.</li>
+<li>Check whether a year is a leap year (divisible by 4, but century years must be divisible by 400).</li>
+<li>Print the multiplication table of a number up to 10. <em>Hint: <a href="../Programs/Program-14-Factorial-using-for-Loop/README.html">Program 14</a>.</em></li>
+<li>Check whether a number is an Armstrong number (for example 153 = 1^3 + 5^3 + 3^3).</li>
+<li>Print the sum of all even numbers from 1 to n.</li>
+<li>Print an inverted star triangle and a pyramid. <em>Hint: <a href="../Programs/Program-19-Star-Triangle-Pattern/README.html">Program 19</a>.</em></li>
+<li>Write a menu-driven program with options for area of a circle, area of a rectangle and exit. <em>Hint: <a href="../Programs/Program-16-Menu-Driven-Program-do-while/README.html">Program 16</a>.</em></li>
+</ol>
+<h2>Unit IV: Function</h2>
+<ol start="17">
+<li>Write a function <code>is_prime(int n)</code> that returns 1 or 0 and use it to print all primes up to 50.</li>
+<li>Write a function that returns the largest of three integers.</li>
+<li>Write a recursive function to compute the sum of the digits of a number.</li>
+<li>Write a recursive function to compute x raised to the power n.</li>
+<li>Write a function using pointers that returns both the quotient and the remainder of two integers. <em>Hint: <a href="../Programs/Program-24-Call-by-Reference-Swap/README.html">Program 24</a>.</em></li>
+</ol>
+<h2>Unit V: Array, Pointer and String</h2>
+<ol start="22">
+<li>Reverse the elements of an array in place.</li>
+<li>Search for a value in an array (linear search) and print its position.</li>
+<li>Find the second largest element of an array.</li>
+<li>Transpose a matrix. <em>Hint: <a href="../Programs/Program-30-Matrix-Addition/README.html">Program 30</a>.</em></li>
+<li>Find the sum of the diagonal elements of a square matrix.</li>
+<li>Write your own <code>my_strlen</code> and <code>my_strcpy</code> functions without using <code>&lt;string.h&gt;</code>.</li>
+<li>Count the words in a line of text. <em>Hint: <a href="../Programs/Program-34-Count-Vowels-and-Consonants/README.html">Program 34</a>.</em></li>
+<li>Use a pointer to print the elements of an array in reverse order. <em>Hint: <a href="../Programs/Program-36-Pointer-Arithmetic-and-Arrays/README.html">Program 36</a>.</em></li>
+</ol>
+<h2>Unit VI: Structure and Union</h2>
+<ol start="30">
+<li>Create a structure for an employee (id, name, salary) and print the employee with the highest salary. <em>Hint: <a href="../Programs/Program-40-Array-of-Structures/README.html">Program 40</a>.</em></li>
+<li>Define a structure for a date and write a function that compares two dates.</li>
+<li>Define a structure for a complex number and write functions to add and multiply two complex numbers.</li>
+<li>Print the sizes of a structure and a union containing the same members and explain the difference. <em>Hint: <a href="../Programs/Program-43-Union-Demo/README.html">Program 43</a>.</em></li>
+</ol>
+<h2>Unit VII: File Handling</h2>
+<ol start="34">
+<li>Read a text file and count its characters, words and lines.</li>
+<li>Copy the contents of one file to another, converting all letters to upper case.</li>
+<li>Store n student records in a text file and read them back. <em>Hint: <a href="../Programs/Program-48-Formatted-File-IO/README.html">Program 48</a>.</em></li>
+<li>Extend the <a href="../Practical/Project-Student-Record-Manager/README.html">Student Record Manager</a> with a delete option or an edit-marks option.</li>
+<li>Using <code>fseek</code>, read the last record of a binary file without reading the others. <em>Hint: <a href="../Programs/Program-50-Random-Access-fseek-ftell/README.html">Program 50</a>.</em></li>
+</ol>
+<h2>Unit VIII: Graphics</h2>
+<ol start="39">
+<li>Draw a house (a rectangle, a triangle roof made of lines and a door) using BGI functions. Needs a BGI-compatible environment.</li>
+<li>Draw three concentric circles with different colours.</li>
+</ol>
+</article></main>
+<footer class="pagefoot"><span>Independent student-maintained learning resource · Not an official university publication</span><a href="../../../index.html">Return to homepage ↑</a></footer>
+</body></html>

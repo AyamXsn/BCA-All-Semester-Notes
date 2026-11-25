@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f6f2"><title>Important Questions - HCAC-104 Programming in C · RJU BCA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f7f6f2;--ink:#20251f;--muted:#74796f;--line:#e3e3da;--green:#64846d;--blue:#28647c;--white:#fffefa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.75 'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#286b80;text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:#1c4654}
+.sitebar{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(5vw,calc((100vw - 1100px)/2));background:rgba(255,254,250,.82)}
+.brand{font:600 22px Georgia,serif;color:#1c211c;text-decoration:none;letter-spacing:-1px}.brand span{color:#789b78}.sitebar a:last-child{font-size:12px;font-weight:600;text-decoration:none}
+.wrap{max-width:900px;margin:58px auto 90px;padding:0 28px}.kicker{font-size:10px;letter-spacing:2px;font-weight:700;color:#66836d;margin:0 0 14px;text-transform:uppercase}
+article{background:var(--white);border:1px solid var(--line);padding:clamp(24px,5vw,58px);box-shadow:0 15px 45px rgba(31,39,30,.045)}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif;line-height:1.2;letter-spacing:-.5px;color:#1d241e}
+h1{font-size:clamp(32px,5vw,48px);margin:0 0 25px}h2{font-size:27px;margin:42px 0 15px;padding-bottom:9px;border-bottom:1px solid var(--line)}h3{font-size:21px;margin:30px 0 12px}
+p{margin:0 0 17px;color:#4d534b}ul,ol{padding-left:25px;color:#4d534b}li{margin:5px 0}
+blockquote{margin:22px 0;padding:15px 20px;border-left:3px solid #89a98b;background:#f0f2eb;color:#646c60}blockquote p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:22px 0 28px;font-size:13px;display:block;overflow-x:auto}th,td{padding:11px 13px;text-align:left;border:1px solid #e5e6df;vertical-align:top}th{background:#edf1e9;color:#344638;font-weight:700}tr:nth-child(even) td{background:#fbfbf7}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#eff1ec;padding:2px 5px;border-radius:4px;font-size:.9em}pre{overflow:auto;background:#18211d;color:#edf3eb;padding:19px;border-radius:7px;line-height:1.55}pre code{background:none;color:inherit;padding:0}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}.pagefoot{max-width:900px;margin:-55px auto 45px;padding:0 28px;color:#888d82;font-size:11px;display:flex;justify-content:space-between;gap:20px}.pagefoot a{color:#55745e;text-decoration:none}
+@media(max-width:600px){.sitebar{height:60px;padding:0 20px}.wrap{margin:28px auto 70px;padding:0 14px}article{padding:24px 18px}h2{font-size:23px}.pagefoot{padding:0 16px;flex-direction:column}}
+</style></head><body>
+<header class="sitebar"><a class="brand" href="../../index.html">r<span>.</span> RJU BCA</a><a href="../../index.html">← Back to learning space</a></header>
+<main class="wrap"><p class="kicker">RJU BCA · STUDENT ARCHIVE</p><article><h1>Important Questions - HCAC-104 Programming in C</h1>
+<p>These questions were prepared from the official syllabus units and the notes in this repository. <strong>No question here is guaranteed to appear in an examination.</strong> No verified past papers are available in this repository yet, so nothing is labelled as &quot;frequently asked&quot;. Questions marked with a link have a worked answer in the notes or a tested program.</p>
+<p><a href="README.html">Back to subject</a></p>
+<hr />
+<h2>A. Short Questions (2 to 5 marks)</h2>
+<h3>Unit I</h3>
+<ol>
+<li>Differentiate between a compiler and an interpreter. (<a href="Notes/Unit-01/Topic-01-Language-Translators.html">Topic 1</a>)</li>
+<li>What are syntax errors and semantic (logical) errors? (<a href="Notes/Unit-01/Topic-01-Language-Translators.html">Topic 1</a>)</li>
+<li>Define algorithm. List its characteristics. (<a href="Notes/Unit-01/Topic-02-Programming-Design-Tools.html">Topic 2</a>)</li>
+<li>What is pseudocode? Write pseudocode to find the largest of three numbers. (<a href="Notes/Unit-01/Topic-02-Programming-Design-Tools.html">Topic 2</a>)</li>
+<li>List the features of a good program. (<a href="Notes/Unit-01/Topic-03-Features-of-a-Good-Program.html">Topic 3</a>)</li>
+<li>Differentiate between procedural and object-oriented programming. (<a href="Notes/Unit-01/Topic-04-Programming-Techniques.html">Topic 4</a>)</li>
+</ol>
+<h3>Unit II</h3>
+<ol start="7">
+<li>Write a short note on the history of C. (<a href="Notes/Unit-02/Topic-01-History-and-Structure-of-a-C-Program.html">Topic 1</a>)</li>
+<li>What are tokens? Name the types of tokens. (<a href="Notes/Unit-02/Topic-02-Character-Set-Tokens-Keywords-and-Comments.html">Topic 2</a>)</li>
+<li>What are keywords? Give examples. (<a href="Notes/Unit-02/Topic-02-Character-Set-Tokens-Keywords-and-Comments.html">Topic 2</a>)</li>
+<li>State the rules for naming identifiers. (<a href="Notes/Unit-02/Topic-02-Character-Set-Tokens-Keywords-and-Comments.html">Topic 2</a>)</li>
+<li>Differentiate between <code>#define</code> and <code>const</code>. (<a href="Notes/Unit-02/Topic-03-Variables-Constants-and-Data-Types.html">Topic 3</a>)</li>
+<li>What is type casting? Give an example. (<a href="Notes/Unit-02/Topic-04-Type-Conversion-and-Input-Output.html">Topic 4</a>)</li>
+<li>Differentiate between <code>a++</code> and <code>++a</code>. (<a href="Notes/Unit-02/Topic-05-Operators.html">Topic 5</a>)</li>
+<li>What is the conditional operator? Give an example. (<a href="Notes/Unit-02/Topic-05-Operators.html">Topic 5</a>)</li>
+</ol>
+<h3>Unit III</h3>
+<ol start="15">
+<li>Differentiate between <code>while</code> and <code>do-while</code>. (<a href="Notes/Unit-03/Topic-02-Looping-Statements.html">Topic 2</a>)</li>
+<li>Differentiate between <code>break</code> and <code>continue</code>. (<a href="Notes/Unit-03/Topic-03-Jump-Statements.html">Topic 3</a>)</li>
+<li>Why is <code>goto</code> discouraged? (<a href="Notes/Unit-03/Topic-03-Jump-Statements.html">Topic 3</a>)</li>
+<li>What is the role of <code>break</code> in <code>switch</code>? (<a href="Notes/Unit-03/Topic-01-Selection-Statements.html">Topic 1</a>)</li>
+</ol>
+<h3>Unit IV</h3>
+<ol start="19">
+<li>What is a function? State its advantages. (<a href="Notes/Unit-04/Topic-01-Function-Concept.html">Topic 1</a>)</li>
+<li>What is a function prototype? Why is it needed? (<a href="Notes/Unit-04/Topic-01-Function-Concept.html">Topic 1</a>)</li>
+<li>Differentiate between call by value and call by reference. (<a href="Notes/Unit-04/Topic-02-Call-by-Value-and-Call-by-Reference.html">Topic 2</a>)</li>
+<li>Define recursion. What is a base case? (<a href="Notes/Unit-04/Topic-03-Recursion.html">Topic 3</a>)</li>
+</ol>
+<h3>Unit V</h3>
+<ol start="23">
+<li>What is an array? How is it declared and initialized? (<a href="Notes/Unit-05/Topic-01-Arrays.html">Topic 1</a>)</li>
+<li>What is a string? Explain <code>strlen</code>, <code>strcpy</code>, <code>strcat</code> and <code>strcmp</code>. (<a href="Notes/Unit-05/Topic-03-Strings.html">Topic 3</a>)</li>
+<li>What is a pointer? Explain <code>&amp;</code> and <code>*</code>. (<a href="Notes/Unit-05/Topic-04-Pointers.html">Topic 4</a>)</li>
+<li>Explain pointer arithmetic. (<a href="Notes/Unit-05/Topic-04-Pointers.html">Topic 4</a>)</li>
+<li>How are arrays passed to functions? (<a href="Notes/Unit-05/Topic-05-Pointers-Arrays-and-Functions.html">Topic 5</a>)</li>
+</ol>
+<h3>Unit VI</h3>
+<ol start="28">
+<li>Differentiate between an array and a structure. (<a href="Notes/Unit-06/Topic-01-Structures.html">Topic 1</a>)</li>
+<li>What is a union? Differentiate between structure and union. (<a href="Notes/Unit-06/Topic-03-Unions.html">Topic 3</a>)</li>
+<li>Explain the arrow operator with an example. (<a href="Notes/Unit-06/Topic-02-Structures-Arrays-Functions-and-Pointers.html">Topic 2</a>)</li>
+</ol>
+<h3>Unit VII</h3>
+<ol start="31">
+<li>Differentiate between text and binary files. (<a href="Notes/Unit-07/Topic-01-File-Handling-Concepts.html">Topic 1</a>)</li>
+<li>Explain the file opening modes. (<a href="Notes/Unit-07/Topic-02-File-Functions-and-Modes.html">Topic 2</a>)</li>
+<li>Write short notes on <code>fflush</code> and <code>freopen</code>. (<a href="Notes/Unit-07/Topic-02-File-Functions-and-Modes.html">Topic 2</a>)</li>
+<li>Explain <code>fseek</code>, <code>ftell</code> and <code>rewind</code>. (<a href="Notes/Unit-07/Topic-04-Random-Access-and-Error-Handling.html">Topic 4</a>)</li>
+<li>How do you detect and handle file errors in C? (<a href="Notes/Unit-07/Topic-04-Random-Access-and-Error-Handling.html">Topic 4</a>)</li>
+</ol>
+<h3>Unit VIII</h3>
+<ol start="36">
+<li>What is a graphics mode? How do you initialize graphics in C? (<a href="Notes/Unit-08/Topic-01-Graphics-Modes-and-Initialization.html">Topic 1</a>)</li>
+<li>Explain any five graphics functions. (<a href="Notes/Unit-08/Topic-02-Graphics-Functions.html">Topic 2</a>)</li>
+</ol>
+<hr />
+<h2>B. Long Questions (8 to 10 marks)</h2>
+<ol>
+<li>Explain the basic structure of a C program with a suitable example, and describe the steps to compile and run it. (<a href="Notes/Unit-02/Topic-01-History-and-Structure-of-a-C-Program.html">Unit II, Topic 1</a>)</li>
+<li>Explain the data types and the operators of C with examples. (<a href="Notes/Unit-02/Topic-03-Variables-Constants-and-Data-Types.html">Topic 3</a>, <a href="Notes/Unit-02/Topic-05-Operators.html">Topic 5</a>)</li>
+<li>Explain formatted and unformatted input/output functions in C. (<a href="Notes/Unit-02/Topic-04-Type-Conversion-and-Input-Output.html">Unit II, Topic 4</a>)</li>
+<li>Explain the decision-making statements of C with flowcharts and examples. (<a href="Notes/Unit-03/Topic-01-Selection-Statements.html">Unit III, Topic 1</a>)</li>
+<li>Explain the looping statements of C. Compare them in a table. (<a href="Notes/Unit-03/Topic-02-Looping-Statements.html">Unit III, Topic 2</a>)</li>
+<li>Explain the jump statements of C. (<a href="Notes/Unit-03/Topic-03-Jump-Statements.html">Unit III, Topic 3</a>)</li>
+<li>Explain call by value and call by reference with a swapping program. (<a href="Notes/Unit-04/Topic-02-Call-by-Value-and-Call-by-Reference.html">Unit IV, Topic 2</a>)</li>
+<li>Explain recursion with programs for factorial, Fibonacci and GCD. (<a href="Notes/Unit-04/Topic-03-Recursion.html">Unit IV, Topic 3</a>)</li>
+<li>Explain two-dimensional arrays and write a program to multiply two matrices. (<a href="Notes/Unit-05/Topic-02-Multi-Dimensional-Arrays.html">Unit V, Topic 2</a>)</li>
+<li>Explain pointers, pointer arithmetic and the relationship between pointers and arrays. (<a href="Notes/Unit-05/Topic-04-Pointers.html">Unit V, Topics 4 and 5</a>)</li>
+<li>Explain structures with arrays, functions and pointers. (<a href="Notes/Unit-06/Topic-02-Structures-Arrays-Functions-and-Pointers.html">Unit VI, Topic 2</a>)</li>
+<li>Explain structures and unions with their differences. (<a href="Notes/Unit-06/Topic-03-Unions.html">Unit VI</a>)</li>
+<li>Explain file handling in C: opening, closing, reading, writing and random access. (<a href="Notes/Unit-07/Introduction.html">Unit VII</a>)</li>
+<li>Explain graphics in C with initialization and drawing functions. (<a href="Notes/Unit-08/Topic-02-Graphics-Functions.html">Unit VIII</a>)</li>
+</ol>
+<hr />
+<h2>C. Programming Questions</h2>
+<p>Each has a tested solution (the linked README shows the code file and real output).</p>
+<table>
+<thead>
+<tr>
+  <th>#</th>
+  <th>Question</th>
+  <th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Find the largest of three numbers</td>
+  <td><a href="Programs/Program-01-Largest-of-Three-Numbers/README.html">Program 01</a></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>Read two numbers and print the sum</td>
+  <td><a href="Programs/Program-03-Sum-of-Two-Numbers/README.html">Program 03</a></td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>Area and circumference of a circle</td>
+  <td><a href="Programs/Program-04-Area-and-Circumference-of-Circle/README.html">Program 04</a></td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>Check even or odd</td>
+  <td><a href="Programs/Program-11-Even-or-Odd/README.html">Program 11</a></td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>Calculator using <code>switch</code></td>
+  <td><a href="Programs/Program-13-Simple-Calculator-Switch/README.html">Program 13</a></td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>Factorial using a loop</td>
+  <td><a href="Programs/Program-14-Factorial-using-for-Loop/README.html">Program 14</a></td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>Reverse a number</td>
+  <td><a href="Programs/Program-15-Reverse-a-Number-using-while/README.html">Program 15</a></td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>Fibonacci series</td>
+  <td><a href="Programs/Program-17-Fibonacci-Series/README.html">Program 17</a></td>
+</tr>
+<tr>
+  <td>9</td>
+  <td>Prime number check</td>
+  <td><a href="Programs/Program-18-Prime-Number-Check/README.html">Program 18</a></td>
+</tr>
+<tr>
+  <td>10</td>
+  <td>Triangle pattern</td>
+  <td><a href="Programs/Program-19-Star-Triangle-Pattern/README.html">Program 19</a></td>
+</tr>
+<tr>
+  <td>11</td>
+  <td>Swap using call by reference</td>
+  <td><a href="Programs/Program-24-Call-by-Reference-Swap/README.html">Program 24</a></td>
+</tr>
+<tr>
+  <td>12</td>
+  <td>Factorial using recursion</td>
+  <td><a href="Programs/Program-25-Factorial-using-Recursion/README.html">Program 25</a></td>
+</tr>
+<tr>
+  <td>13</td>
+  <td>GCD using recursion</td>
+  <td><a href="Programs/Program-27-GCD-using-Recursion/README.html">Program 27</a></td>
+</tr>
+<tr>
+  <td>14</td>
+  <td>Sum, average, largest and smallest of an array</td>
+  <td><a href="Programs/Program-28-Array-Sum-Average-Max-Min/README.html">Program 28</a></td>
+</tr>
+<tr>
+  <td>15</td>
+  <td>Sort an array</td>
+  <td><a href="Programs/Program-29-Bubble-Sort/README.html">Program 29</a></td>
+</tr>
+<tr>
+  <td>16</td>
+  <td>Add two matrices</td>
+  <td><a href="Programs/Program-30-Matrix-Addition/README.html">Program 30</a></td>
+</tr>
+<tr>
+  <td>17</td>
+  <td>Multiply two matrices</td>
+  <td><a href="Programs/Program-31-Matrix-Multiplication/README.html">Program 31</a></td>
+</tr>
+<tr>
+  <td>18</td>
+  <td>Check a palindrome</td>
+  <td><a href="Programs/Program-33-Palindrome-Check/README.html">Program 33</a></td>
+</tr>
+<tr>
+  <td>19</td>
+  <td>Count vowels and consonants</td>
+  <td><a href="Programs/Program-34-Count-Vowels-and-Consonants/README.html">Program 34</a></td>
+</tr>
+<tr>
+  <td>20</td>
+  <td>Student record using a structure</td>
+  <td><a href="Programs/Program-39-Student-Structure/README.html">Program 39</a></td>
+</tr>
+<tr>
+  <td>21</td>
+  <td>Highest marks using an array of structures</td>
+  <td><a href="Programs/Program-40-Array-of-Structures/README.html">Program 40</a></td>
+</tr>
+<tr>
+  <td>22</td>
+  <td>Write to and read from a text file</td>
+  <td><a href="Programs/Program-44-Write-to-a-Text-File/README.html">Program 44</a>, <a href="Programs/Program-45-Read-from-a-Text-File/README.html">Program 45</a></td>
+</tr>
+<tr>
+  <td>23</td>
+  <td>Copy one file to another</td>
+  <td><a href="Programs/Program-47-Copy-a-File-Character-by-Character/README.html">Program 47</a></td>
+</tr>
+<tr>
+  <td>24</td>
+  <td>Store and read structure records in a file</td>
+  <td><a href="Programs/Program-49-Binary-File-fwrite-fread/README.html">Program 49</a></td>
+</tr>
+<tr>
+  <td>25</td>
+  <td>A simple application with file storage</td>
+  <td><a href="Practical/Project-Student-Record-Manager/README.html">Student Record Manager</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>D. Output Prediction Questions</h2>
+<p>Try each question first. Answers were verified by compiling and running the code.</p>
+<p><strong>Q1.</strong> What is printed?</p>
+<pre><code class="language-c">int a = 5, b = 2;
+printf(&quot;%d %d %.1f&quot;, a / b, a % b, (float)a / b);
+</code></pre>
+<details><summary>Answer</summary>
+
+<p><code>2 1 2.5</code>. Integer division gives 2, the remainder is 1, and the cast makes the division real.</p>
+</details>
+
+<p><strong>Q2.</strong> What is printed?</p>
+<pre><code class="language-c">for (i = 0; i &lt; 5; i++) {
+    if (i == 2) continue;
+    if (i == 4) break;
+    printf(&quot;%d &quot;, i);
+}
+</code></pre>
+<details><summary>Answer</summary>
+
+<p><code>0 1 3</code>. The pass with <code>i == 2</code> is skipped and the loop stops at <code>i == 4</code>.</p>
+</details>
+
+<p><strong>Q3.</strong> What is printed?</p>
+<pre><code class="language-c">int arr[5] = {1, 2, 3, 4, 5};
+int *p = arr;
+printf(&quot;%d %d&quot;, *(p + 2), arr[4]);
+</code></pre>
+<details><summary>Answer</summary>
+
+<p><code>3 5</code>. <code>*(p + 2)</code> is the third element and <code>arr[4]</code> is the last.</p>
+</details>
+
+<p><strong>Q4.</strong> What does <code>f(4)</code> return?</p>
+<pre><code class="language-c">int f(int n)
+{
+    if (n == 0) return 0;
+    return n + f(n - 1);
+}
+</code></pre>
+<details><summary>Answer</summary>
+
+<p><code>10</code>, because <code>4 + 3 + 2 + 1 + 0 = 10</code>.</p>
+</details>
+
+<p><strong>Q5.</strong> What is printed?</p>
+<pre><code class="language-c">char s[] = &quot;HELLO&quot;;
+s[0] = 'J';
+printf(&quot;%s %zu&quot;, s, strlen(s));
+</code></pre>
+<details><summary>Answer</summary>
+
+<p><code>JELLO 5</code>. The first character is replaced; the length stays 5.</p>
+</details>
+
+<p><strong>Q6.</strong> What is printed, and what is the mistake?</p>
+<pre><code class="language-c">int x = 10;
+if (x = 5)
+    printf(&quot;A&quot;);
+else
+    printf(&quot;B&quot;);
+</code></pre>
+<details><summary>Answer</summary>
+
+<p><code>A</code>. The condition uses <code>=</code> (assignment), which stores 5 in <code>x</code> and gives the non-zero value 5, so it is always true. The programmer almost certainly meant <code>==</code>. Compilers usually warn about this.</p>
+</details>
+
+<p><strong>Q7.</strong> What are the final values of <code>r</code> and <code>n</code>?</p>
+<pre><code class="language-c">int n = 3, r = 1;
+while (n &gt; 0) {
+    r *= n;
+    n--;
+}
+</code></pre>
+<details><summary>Answer</summary>
+
+<p><code>r = 6</code> and <code>n = 0</code> (3 x 2 x 1 = 6).</p>
+</details>
+
+<p><strong>Q8.</strong> For <code>int u = 7;</code>, what are <code>u &gt;&gt; 1</code> and <code>u &lt;&lt; 1</code>?</p>
+<details><summary>Answer</summary>
+
+<p><code>3</code> and <code>14</code>. Shifting right by one divides by 2 (dropping the fraction); shifting left by one doubles.</p>
+</details>
+
+<hr />
+<h2>E. Important Topics for Revision (Unit-Wise)</h2>
+<p>This list highlights core concepts from the official syllabus. It is a revision aid, not a prediction.</p>
+<table>
+<thead>
+<tr>
+  <th>Unit</th>
+  <th>Core topics to revise</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>I</td>
+  <td>Compiler vs interpreter; algorithm, flowchart symbols, pseudocode; features of a good program; programming techniques</td>
+</tr>
+<tr>
+  <td>II</td>
+  <td>Structure of a C program; tokens, keywords, identifier rules; data types and format specifiers; type casting; <code>printf</code>/<code>scanf</code>; operator types and precedence</td>
+</tr>
+<tr>
+  <td>III</td>
+  <td><code>if</code>, nested <code>if</code>, else-if ladder, <code>switch</code>; <code>while</code>, <code>do-while</code>, <code>for</code>; nested loops and patterns; <code>break</code>, <code>continue</code>, <code>goto</code>, <code>exit</code></td>
+</tr>
+<tr>
+  <td>IV</td>
+  <td>Prototype, definition, call; call by value vs reference; recursion (factorial, Fibonacci, GCD)</td>
+</tr>
+<tr>
+  <td>V</td>
+  <td>Arrays (1D and 2D) and matrix programs; string functions; pointer declaration and arithmetic; array-pointer relation; passing arrays and strings</td>
+</tr>
+<tr>
+  <td>VI</td>
+  <td>Structure definition and access; array of structures; structure with functions; <code>-&gt;</code>; union and structure vs union</td>
+</tr>
+<tr>
+  <td>VII</td>
+  <td>File modes; <code>fopen</code>/<code>fclose</code>/<code>fflush</code>/<code>freopen</code>; <code>fprintf</code>/<code>fscanf</code>/<code>fgetc</code>/<code>fputc</code>/<code>fread</code>/<code>fwrite</code>; <code>fseek</code>/<code>ftell</code>/<code>rewind</code>; error handling</td>
+</tr>
+<tr>
+  <td>VIII</td>
+  <td>Graphics modes; <code>initgraph</code>; drawing functions</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a href="README.html">Back to subject</a></p>
+</article></main>
+<footer class="pagefoot"><span>Independent student-maintained learning resource · Not an official university publication</span><a href="../../index.html">Return to homepage ↑</a></footer>
+</body></html>

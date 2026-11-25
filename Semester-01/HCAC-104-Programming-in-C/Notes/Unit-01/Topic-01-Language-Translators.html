@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f6f2"><title>Topic 1: Programming Languages and Language Translators · RJU BCA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f7f6f2;--ink:#20251f;--muted:#74796f;--line:#e3e3da;--green:#64846d;--blue:#28647c;--white:#fffefa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.75 'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#286b80;text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:#1c4654}
+.sitebar{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(5vw,calc((100vw - 1100px)/2));background:rgba(255,254,250,.82)}
+.brand{font:600 22px Georgia,serif;color:#1c211c;text-decoration:none;letter-spacing:-1px}.brand span{color:#789b78}.sitebar a:last-child{font-size:12px;font-weight:600;text-decoration:none}
+.wrap{max-width:900px;margin:58px auto 90px;padding:0 28px}.kicker{font-size:10px;letter-spacing:2px;font-weight:700;color:#66836d;margin:0 0 14px;text-transform:uppercase}
+article{background:var(--white);border:1px solid var(--line);padding:clamp(24px,5vw,58px);box-shadow:0 15px 45px rgba(31,39,30,.045)}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif;line-height:1.2;letter-spacing:-.5px;color:#1d241e}
+h1{font-size:clamp(32px,5vw,48px);margin:0 0 25px}h2{font-size:27px;margin:42px 0 15px;padding-bottom:9px;border-bottom:1px solid var(--line)}h3{font-size:21px;margin:30px 0 12px}
+p{margin:0 0 17px;color:#4d534b}ul,ol{padding-left:25px;color:#4d534b}li{margin:5px 0}
+blockquote{margin:22px 0;padding:15px 20px;border-left:3px solid #89a98b;background:#f0f2eb;color:#646c60}blockquote p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:22px 0 28px;font-size:13px;display:block;overflow-x:auto}th,td{padding:11px 13px;text-align:left;border:1px solid #e5e6df;vertical-align:top}th{background:#edf1e9;color:#344638;font-weight:700}tr:nth-child(even) td{background:#fbfbf7}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#eff1ec;padding:2px 5px;border-radius:4px;font-size:.9em}pre{overflow:auto;background:#18211d;color:#edf3eb;padding:19px;border-radius:7px;line-height:1.55}pre code{background:none;color:inherit;padding:0}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}.pagefoot{max-width:900px;margin:-55px auto 45px;padding:0 28px;color:#888d82;font-size:11px;display:flex;justify-content:space-between;gap:20px}.pagefoot a{color:#55745e;text-decoration:none}
+@media(max-width:600px){.sitebar{height:60px;padding:0 20px}.wrap{margin:28px auto 70px;padding:0 14px}article{padding:24px 18px}h2{font-size:23px}.pagefoot{padding:0 16px;flex-direction:column}}
+</style></head><body>
+<header class="sitebar"><a class="brand" href="../../../../index.html">r<span>.</span> RJU BCA</a><a href="../../../../index.html">← Back to learning space</a></header>
+<main class="wrap"><p class="kicker">RJU BCA · STUDENT ARCHIVE</p><article><h1>Topic 1: Programming Languages and Language Translators</h1>
+<p><strong>Unit I | HCAC-104 Programming in C</strong></p>
+<h2>1. Introduction</h2>
+<p>A computer's processor understands only <strong>machine language</strong>, which is made of binary digits (0 and 1). Writing programs in binary is slow and error-prone, so humans created easier languages. Because the processor cannot run those languages directly, a <strong>language translator</strong> is needed to convert them into machine code.</p>
+<h2>2. Levels of Programming Languages</h2>
+<table>
+<thead>
+<tr>
+  <th>Level</th>
+  <th>Example</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Machine language</td>
+  <td>Binary patterns such as <code>10110000 01100001</code></td>
+  <td>The only language the CPU executes directly.</td>
+</tr>
+<tr>
+  <td>Assembly language</td>
+  <td><code>MOV A, B</code></td>
+  <td>Uses short symbolic names (mnemonics) instead of binary.</td>
+</tr>
+<tr>
+  <td>High-level language</td>
+  <td>C, C++, Java, Python</td>
+  <td>Uses English-like words and mathematical notation.</td>
+</tr>
+</tbody>
+</table>
+<h3>2.1 Advantages and Disadvantages</h3>
+<table>
+<thead>
+<tr>
+  <th>Level</th>
+  <th>Advantages</th>
+  <th>Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Machine</td>
+  <td>Fastest execution; no translation needed</td>
+  <td>Very hard to write and debug; different for each CPU</td>
+</tr>
+<tr>
+  <td>Assembly</td>
+  <td>Faster and smaller programs; direct hardware control</td>
+  <td>Still hard to learn; depends on CPU type; needs an assembler</td>
+</tr>
+<tr>
+  <td>High-level</td>
+  <td>Easy to learn, read and maintain; portable between machines</td>
+  <td>Needs a compiler or interpreter; usually less direct hardware control</td>
+</tr>
+</tbody>
+</table>
+<h2>3. Language Translators</h2>
+<p>A <strong>language translator</strong> is a program that converts a program written in one language into another language, usually into machine code.</p>
+<h3>3.1 Assembler</h3>
+<p>Converts <strong>assembly language</strong> into machine code. Each assembly instruction usually maps to one machine instruction.</p>
+<h3>3.2 Compiler</h3>
+<p>Translates the <strong>whole source program</strong> into machine code (an executable file) in one go, <strong>before</strong> the program runs. If errors exist, the compiler reports them and does not produce the executable.</p>
+<ul>
+<li>Example: the C compiler <code>gcc</code> turns <code>program.c</code> into an executable file.</li>
+</ul>
+<h3>3.3 Interpreter</h3>
+<p>Translates and executes the program <strong>one statement at a time</strong>. It does not usually produce a separate executable file.</p>
+<ul>
+<li>Example: the standard Python implementation interprets Python code.</li>
+</ul>
+<h3>3.4 Compiler vs Interpreter</h3>
+<table>
+<thead>
+<tr>
+  <th>Basis</th>
+  <th>Compiler</th>
+  <th>Interpreter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Translation unit</td>
+  <td>Whole program at once</td>
+  <td>One statement at a time</td>
+</tr>
+<tr>
+  <td>Output</td>
+  <td>Separate executable (object) file</td>
+  <td>Usually no separate file</td>
+</tr>
+<tr>
+  <td>Execution speed</td>
+  <td>Faster once compiled</td>
+  <td>Slower, since translation repeats every run</td>
+</tr>
+<tr>
+  <td>Error reporting</td>
+  <td>Reports many errors after scanning the program</td>
+  <td>Stops at the first error it reaches</td>
+</tr>
+<tr>
+  <td>Memory</td>
+  <td>Executable is kept for later runs</td>
+  <td>Source and interpreter needed every run</td>
+</tr>
+<tr>
+  <td>Typical examples</td>
+  <td>C, C++</td>
+  <td>Python, JavaScript (typically)</td>
+</tr>
+</tbody>
+</table>
+<h2>4. Syntax and Semantics</h2>
+<ul>
+<li><strong>Syntax</strong> is the set of grammar rules of a language: how statements must be written. A <strong>syntax error</strong> breaks those rules, and the compiler rejects the program.<ul>
+<li>Example: <code>printf(&quot;Hi&quot;)</code> without the closing semicolon in C.</li>
+</ul>
+</li>
+<li><strong>Semantics</strong> is the meaning of a correctly written statement: what it actually does. A <strong>semantic (logic) error</strong> passes the compiler but produces wrong results.<ul>
+<li>Example: writing <code>area = length + width;</code> when you meant <code>length * width</code>. The compiler accepts it, but the answer is wrong.</li>
+</ul>
+</li>
+</ul>
+<h2>5. The C Build Process (Overview)</h2>
+<pre><code class="language-text">Source code (.c)  --compiler--&gt;  Object code (.o)  --linker--&gt;  Executable
+</code></pre>
+<p>You will see this in practice in the program example: <a href="../../Programs/Program-01-Largest-of-Three-Numbers/README.html">Program-01</a>.</p>
+<h2>6. Summary</h2>
+<ul>
+<li>Machine language is native to the CPU; assembly and high-level languages need translators.</li>
+<li>An assembler handles assembly; compilers translate the whole program; interpreters translate line by line.</li>
+<li>Syntax is about correct form; semantics is about correct meaning.</li>
+</ul>
+<h2>7. Exam-Oriented Answers</h2>
+<h3>5-mark: Differentiate between a compiler and an interpreter.</h3>
+<p><strong>Introduction.</strong> Both convert high-level source code into a form the computer can run.
+<strong>Points.</strong> (1) A compiler translates the whole program at once, an interpreter one statement at a time. (2) A compiler creates a separate executable file; an interpreter usually does not. (3) Compiled programs run faster. (4) A compiler reports many errors after scanning the program; an interpreter stops at the first error. (5) C is normally compiled; Python is normally interpreted.
+<strong>Conclusion.</strong> Compilers favour speed; interpreters favour quick testing.</p>
+<h3>5-mark: Explain language translators.</h3>
+<p>Define a translator, then describe the assembler (assembly to machine code), compiler and interpreter with one example each, and finish with the comparison table.</p>
+<h3>10-mark: Explain programming languages and their translators.</h3>
+<p>Describe machine, assembly and high-level languages with the advantages and disadvantages table; explain the three translators; compare compiler and interpreter; explain syntax and semantic errors with examples; add the C build process diagram.</p>
+<hr />
+<p><a href="Introduction.html">Back to Unit Introduction</a> | <a href="Topic-02-Programming-Design-Tools.html">Next: Programming Design Tools</a></p>
+</article></main>
+<footer class="pagefoot"><span>Independent student-maintained learning resource · Not an official university publication</span><a href="../../../../index.html">Return to homepage ↑</a></footer>
+</body></html>

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f6f2"><title>Topic 1: History of C and Structure of a C Program · RJU BCA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f7f6f2;--ink:#20251f;--muted:#74796f;--line:#e3e3da;--green:#64846d;--blue:#28647c;--white:#fffefa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.75 'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#286b80;text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:#1c4654}
+.sitebar{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(5vw,calc((100vw - 1100px)/2));background:rgba(255,254,250,.82)}
+.brand{font:600 22px Georgia,serif;color:#1c211c;text-decoration:none;letter-spacing:-1px}.brand span{color:#789b78}.sitebar a:last-child{font-size:12px;font-weight:600;text-decoration:none}
+.wrap{max-width:900px;margin:58px auto 90px;padding:0 28px}.kicker{font-size:10px;letter-spacing:2px;font-weight:700;color:#66836d;margin:0 0 14px;text-transform:uppercase}
+article{background:var(--white);border:1px solid var(--line);padding:clamp(24px,5vw,58px);box-shadow:0 15px 45px rgba(31,39,30,.045)}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif;line-height:1.2;letter-spacing:-.5px;color:#1d241e}
+h1{font-size:clamp(32px,5vw,48px);margin:0 0 25px}h2{font-size:27px;margin:42px 0 15px;padding-bottom:9px;border-bottom:1px solid var(--line)}h3{font-size:21px;margin:30px 0 12px}
+p{margin:0 0 17px;color:#4d534b}ul,ol{padding-left:25px;color:#4d534b}li{margin:5px 0}
+blockquote{margin:22px 0;padding:15px 20px;border-left:3px solid #89a98b;background:#f0f2eb;color:#646c60}blockquote p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:22px 0 28px;font-size:13px;display:block;overflow-x:auto}th,td{padding:11px 13px;text-align:left;border:1px solid #e5e6df;vertical-align:top}th{background:#edf1e9;color:#344638;font-weight:700}tr:nth-child(even) td{background:#fbfbf7}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#eff1ec;padding:2px 5px;border-radius:4px;font-size:.9em}pre{overflow:auto;background:#18211d;color:#edf3eb;padding:19px;border-radius:7px;line-height:1.55}pre code{background:none;color:inherit;padding:0}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}.pagefoot{max-width:900px;margin:-55px auto 45px;padding:0 28px;color:#888d82;font-size:11px;display:flex;justify-content:space-between;gap:20px}.pagefoot a{color:#55745e;text-decoration:none}
+@media(max-width:600px){.sitebar{height:60px;padding:0 20px}.wrap{margin:28px auto 70px;padding:0 14px}article{padding:24px 18px}h2{font-size:23px}.pagefoot{padding:0 16px;flex-direction:column}}
+</style></head><body>
+<header class="sitebar"><a class="brand" href="../../../../index.html">r<span>.</span> RJU BCA</a><a href="../../../../index.html">← Back to learning space</a></header>
+<main class="wrap"><p class="kicker">RJU BCA · STUDENT ARCHIVE</p><article><h1>Topic 1: History of C and Structure of a C Program</h1>
+<p><strong>Unit II | HCAC-104 Programming in C</strong></p>
+<h2>1. Introduction</h2>
+<p>C is a general-purpose, procedural programming language. It is used for operating systems, compilers, embedded systems and many other programs where speed and control over hardware matter. It is also the foundation for C++, Java and many other languages, which is why it is taught first.</p>
+<h2>2. History of C</h2>
+<table>
+<thead>
+<tr>
+  <th>Year (approx.)</th>
+  <th>Event</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1960s</td>
+  <td><strong>BCPL</strong> is designed by Martin Richards.</td>
+</tr>
+<tr>
+  <td>1969-70</td>
+  <td><strong>B</strong> is created by Ken Thompson at Bell Laboratories, based on BCPL.</td>
+</tr>
+<tr>
+  <td>1972</td>
+  <td><strong>C</strong> is developed by <strong>Dennis Ritchie</strong> at Bell Laboratories, mainly to write the UNIX operating system.</td>
+</tr>
+<tr>
+  <td>1978</td>
+  <td>Kernighan and Ritchie publish <em>The C Programming Language</em>; this version is called <strong>K&amp;R C</strong>.</td>
+</tr>
+<tr>
+  <td>1989</td>
+  <td>The American National Standards Institute standardises the language: <strong>ANSI C</strong> (C89).</td>
+</tr>
+<tr>
+  <td>1990</td>
+  <td>Adopted by ISO as <strong>C90</strong>.</td>
+</tr>
+<tr>
+  <td>1999</td>
+  <td><strong>C99</strong> adds <code>//</code> comments, <code>long long</code>, declarations anywhere in a block and more.</td>
+</tr>
+<tr>
+  <td>2011 and later</td>
+  <td><strong>C11</strong> and <strong>C17</strong> add further features (such as multithreading support).</td>
+</tr>
+</tbody>
+</table>
+<h3>2.1 Why C Became Popular</h3>
+<ol>
+<li>Small, simple set of keywords.</li>
+<li>Fast, because it is close to the machine.</li>
+<li>Portable: the same program can be compiled on different computers.</li>
+<li>Supports low-level operations (pointers, bit operations) as well as high-level structure (functions).</li>
+<li>Rich library of ready-made functions.</li>
+</ol>
+<h3>2.2 Features, Advantages and Disadvantages</h3>
+<table>
+<thead>
+<tr>
+  <th>Advantages</th>
+  <th>Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Fast and efficient</td>
+  <td>No built-in support for object-oriented programming</td>
+</tr>
+<tr>
+  <td>Portable and widely supported</td>
+  <td>No automatic bounds checking on arrays</td>
+</tr>
+<tr>
+  <td>Structured programming with functions</td>
+  <td>Manual memory management can cause errors</td>
+</tr>
+<tr>
+  <td>Low-level access with pointers</td>
+  <td>Less safe for beginners than modern languages</td>
+</tr>
+</tbody>
+</table>
+<h2>3. Basic Structure of a C Program</h2>
+<p>A C program is made of the following sections. Only <code>main()</code> is mandatory.</p>
+<table>
+<thead>
+<tr>
+  <th>#</th>
+  <th>Section</th>
+  <th>Purpose</th>
+  <th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Documentation</td>
+  <td>Comments describing the program</td>
+  <td>Optional</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>Link</td>
+  <td><code>#include</code> lines that bring in header files</td>
+  <td>Needed when library functions are used</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>Definition</td>
+  <td><code>#define</code> symbolic constants and macros</td>
+  <td>Optional</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>Global declaration</td>
+  <td>Variables and function prototypes visible to all functions</td>
+  <td>Optional</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>main()</code> function</td>
+  <td>Where execution starts</td>
+  <td><strong>Required</strong></td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>Sub-programs</td>
+  <td>Other user-defined functions</td>
+  <td>Optional</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-c">/* Documentation: program to print a greeting */
+#include &lt;stdio.h&gt;                 /* link section */
+
+#define COLLEGE &quot;RJU BCA&quot;          /* definition section */
+
+void greet(void);                  /* global declaration (prototype) */
+
+int main(void)                     /* main function */
+{
+    greet();
+    return 0;
+}
+
+void greet(void)                   /* sub-program */
+{
+    printf(&quot;Welcome to %s\n&quot;, COLLEGE);
+}
+</code></pre>
+<p>The complete, tested version is <a href="../../Programs/Program-02-Basic-Structure-of-a-C-Program/README.html">Program 02</a>.</p>
+<h3>3.1 Line-by-Line Explanation</h3>
+<ul>
+<li><code>#include &lt;stdio.h&gt;</code>: asks the preprocessor to insert the standard input/output header, which declares <code>printf</code> and <code>scanf</code>.</li>
+<li><code>int main(void)</code>: every program starts executing here. <code>int</code> means it returns an integer to the operating system.</li>
+<li><code>{ ... }</code>: braces enclose the body of a function.</li>
+<li><code>printf(...)</code>: prints text on the screen.</li>
+<li><code>return 0;</code>: tells the operating system the program ended successfully.</li>
+<li><code>;</code>: every statement ends with a semicolon.</li>
+</ul>
+<h3>3.2 Compile and Run</h3>
+<pre><code class="language-text">Source code (hello.c) --&gt; compiler --&gt; object code --&gt; linker --&gt; executable (hello)
+</code></pre>
+<pre><code class="language-bash">gcc hello.c -o hello
+./hello
+</code></pre>
+<h2>4. Important Rules</h2>
+<ol>
+<li>C is <strong>case-sensitive</strong>: <code>Main</code> and <code>main</code> are different.</li>
+<li>Execution always begins at <code>main()</code>.</li>
+<li>Statements end with <code>;</code>.</li>
+<li>Blocks use <code>{</code> and <code>}</code>.</li>
+<li>Every variable must be declared before use.</li>
+</ol>
+<h2>5. Exam-Oriented Answers</h2>
+<h3>5-mark: Explain the basic structure of a C program.</h3>
+<p><strong>Introduction.</strong> A C program is organised into a fixed set of sections so that code is readable and easy to maintain.</p>
+<p><strong>Sections.</strong></p>
+<ol>
+<li><em>Documentation section:</em> comments giving the program's name and purpose.</li>
+<li><em>Link section:</em> <code>#include</code> statements that link header files such as <code>stdio.h</code>.</li>
+<li><em>Definition section:</em> symbolic constants created with <code>#define</code>.</li>
+<li><em>Global declaration section:</em> global variables and function prototypes usable in all functions.</li>
+<li><em>main() function section:</em> execution starts here; it contains declarations and executable statements inside braces.</li>
+<li><em>Sub-program section:</em> user-defined functions called from <code>main()</code>.</li>
+</ol>
+<p><strong>Example.</strong> Use the greeting program above.</p>
+<p><strong>Conclusion.</strong> Only <code>main()</code> is compulsory, but following this layout produces well-organised programs.</p>
+<h3>5-mark: Write a short note on the history of C.</h3>
+<p>Write the table above in sentences: BCPL, B, C by Dennis Ritchie in 1972 at Bell Labs for UNIX, K&amp;R C (1978), ANSI C (1989), C99, C11. Add two or three reasons for its popularity.</p>
+<h2>6. Summary</h2>
+<p>C was created by Dennis Ritchie in 1972 for UNIX and standardised as ANSI C in 1989. A C program has documentation, link, definition, global declaration, <code>main()</code> and sub-program sections, and execution always starts at <code>main()</code>.</p>
+<hr />
+<p><a href="Introduction.html">Back to Unit Introduction</a> | <a href="Topic-02-Character-Set-Tokens-Keywords-and-Comments.html">Next: Character Set, Tokens, Keywords and Comments</a></p>
+</article></main>
+<footer class="pagefoot"><span>Independent student-maintained learning resource · Not an official university publication</span><a href="../../../../index.html">Return to homepage ↑</a></footer>
+</body></html>

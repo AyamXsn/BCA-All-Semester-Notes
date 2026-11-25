@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f6f2"><title>Topic 1: Function Definition, Return and Prototype · RJU BCA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f7f6f2;--ink:#20251f;--muted:#74796f;--line:#e3e3da;--green:#64846d;--blue:#28647c;--white:#fffefa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.75 'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#286b80;text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:#1c4654}
+.sitebar{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(5vw,calc((100vw - 1100px)/2));background:rgba(255,254,250,.82)}
+.brand{font:600 22px Georgia,serif;color:#1c211c;text-decoration:none;letter-spacing:-1px}.brand span{color:#789b78}.sitebar a:last-child{font-size:12px;font-weight:600;text-decoration:none}
+.wrap{max-width:900px;margin:58px auto 90px;padding:0 28px}.kicker{font-size:10px;letter-spacing:2px;font-weight:700;color:#66836d;margin:0 0 14px;text-transform:uppercase}
+article{background:var(--white);border:1px solid var(--line);padding:clamp(24px,5vw,58px);box-shadow:0 15px 45px rgba(31,39,30,.045)}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif;line-height:1.2;letter-spacing:-.5px;color:#1d241e}
+h1{font-size:clamp(32px,5vw,48px);margin:0 0 25px}h2{font-size:27px;margin:42px 0 15px;padding-bottom:9px;border-bottom:1px solid var(--line)}h3{font-size:21px;margin:30px 0 12px}
+p{margin:0 0 17px;color:#4d534b}ul,ol{padding-left:25px;color:#4d534b}li{margin:5px 0}
+blockquote{margin:22px 0;padding:15px 20px;border-left:3px solid #89a98b;background:#f0f2eb;color:#646c60}blockquote p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:22px 0 28px;font-size:13px;display:block;overflow-x:auto}th,td{padding:11px 13px;text-align:left;border:1px solid #e5e6df;vertical-align:top}th{background:#edf1e9;color:#344638;font-weight:700}tr:nth-child(even) td{background:#fbfbf7}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#eff1ec;padding:2px 5px;border-radius:4px;font-size:.9em}pre{overflow:auto;background:#18211d;color:#edf3eb;padding:19px;border-radius:7px;line-height:1.55}pre code{background:none;color:inherit;padding:0}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}.pagefoot{max-width:900px;margin:-55px auto 45px;padding:0 28px;color:#888d82;font-size:11px;display:flex;justify-content:space-between;gap:20px}.pagefoot a{color:#55745e;text-decoration:none}
+@media(max-width:600px){.sitebar{height:60px;padding:0 20px}.wrap{margin:28px auto 70px;padding:0 14px}article{padding:24px 18px}h2{font-size:23px}.pagefoot{padding:0 16px;flex-direction:column}}
+</style></head><body>
+<header class="sitebar"><a class="brand" href="../../../../index.html">r<span>.</span> RJU BCA</a><a href="../../../../index.html">← Back to learning space</a></header>
+<main class="wrap"><p class="kicker">RJU BCA · STUDENT ARCHIVE</p><article><h1>Topic 1: Function Definition, Return and Prototype</h1>
+<p><strong>Unit IV | HCAC-104 Programming in C</strong></p>
+<h2>1. Introduction</h2>
+<h3>1.1 Definition</h3>
+<p>A <strong>function</strong> is a named, self-contained block of code that performs one specific task and can be called whenever needed. <code>main()</code> is itself a function.</p>
+<h3>1.2 Why Use Functions?</h3>
+<ol>
+<li><strong>Reusability:</strong> write once, call many times.</li>
+<li><strong>Modularity:</strong> a big problem is divided into small parts.</li>
+<li><strong>Easier debugging and testing:</strong> each function can be tested alone.</li>
+<li><strong>Shorter, clearer programs.</strong></li>
+<li><strong>Teamwork:</strong> different people write different functions.</li>
+</ol>
+<h3>1.3 Types of Functions</h3>
+<table>
+<thead>
+<tr>
+  <th>Type</th>
+  <th>Description</th>
+  <th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Library (built-in) functions</td>
+  <td>Provided by the compiler's libraries</td>
+  <td><code>printf</code>, <code>sqrt</code>, <code>strlen</code></td>
+</tr>
+<tr>
+  <td>User-defined functions</td>
+  <td>Written by the programmer</td>
+  <td><code>add</code>, <code>factorial</code></td>
+</tr>
+</tbody>
+</table>
+<h2>2. Parts of a Function</h2>
+<h3>2.1 Function Prototype (Declaration)</h3>
+<p>Tells the compiler the function's name, return type and parameter types <strong>before</strong> it is used.</p>
+<pre><code class="language-c">int add(int a, int b);     /* prototype ends with a semicolon */
+</code></pre>
+<p>Parameter names are optional in a prototype: <code>int add(int, int);</code></p>
+<h3>2.2 Function Definition</h3>
+<pre><code class="language-c">return_type function_name(parameter_list)
+{
+    declarations;
+    statements;
+    return value;     /* omitted when return type is void */
+}
+</code></pre>
+<pre><code class="language-c">int add(int a, int b)       /* a and b are formal parameters */
+{
+    return a + b;
+}
+</code></pre>
+<h3>2.3 Function Call</h3>
+<pre><code class="language-c">int result = add(3, 4);     /* 3 and 4 are actual arguments */
+</code></pre>
+<table>
+<thead>
+<tr>
+  <th>Term</th>
+  <th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Formal parameters</td>
+  <td>Variables in the function definition</td>
+</tr>
+<tr>
+  <td>Actual arguments</td>
+  <td>Values supplied in the call</td>
+</tr>
+<tr>
+  <td>Return type</td>
+  <td>Type of the value sent back (<code>void</code> if none)</td>
+</tr>
+</tbody>
+</table>
+<h2>3. The <code>return</code> Statement</h2>
+<ul>
+<li><code>return expression;</code> ends the function and sends a value to the caller.</li>
+<li>The value should match the return type.</li>
+<li>A <code>void</code> function may use plain <code>return;</code> to exit early.</li>
+<li><code>main()</code> returns an <code>int</code>; <code>0</code> means success.</li>
+</ul>
+<h2>4. Categories of Functions</h2>
+<table>
+<thead>
+<tr>
+  <th>Category</th>
+  <th>Arguments</th>
+  <th>Return value</th>
+  <th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>No</td>
+  <td>No</td>
+  <td><code>void greet(void)</code></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>Yes</td>
+  <td>No</td>
+  <td><code>void print_square(int n)</code></td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>No</td>
+  <td>Yes</td>
+  <td><code>int read_default(void)</code></td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>Yes</td>
+  <td>Yes</td>
+  <td><code>int add(int a, int b)</code></td>
+</tr>
+</tbody>
+</table>
+<p>All four forms are shown in the tested <a href="../../Programs/Program-22-Function-Types/README.html">Program 22</a>.</p>
+<h2>5. Why the Prototype Matters</h2>
+<p>If a function is defined <strong>after</strong> <code>main()</code>, the prototype lets the compiler check the calls in <code>main()</code>. Without it, the compiler cannot verify the argument types and may report an error or warn about an implicit declaration.</p>
+<h2>6. Local and Global Variables (Brief)</h2>
+<p>Variables declared inside a function are <strong>local</strong> to it and disappear when it ends. Variables declared outside every function are <strong>global</strong> and visible to all functions below. Prefer parameters and return values to global variables.</p>
+<h2>7. Exam-Oriented Answers</h2>
+<h3>5-mark: What is a function? Explain its advantages and syntax.</h3>
+<p>Definition, the five advantages, syntax of definition, prototype and call, and the <code>add</code> example.</p>
+<h3>5-mark: Explain function prototype, definition and call.</h3>
+<p>Describe each part with its syntax and the formal/actual parameter table.</p>
+<h3>10-mark: Explain the types and categories of functions in C with examples.</h3>
+<p>Library vs user-defined; four categories with a code example each (Program 22); prototype and return rules; advantages; conclusion.</p>
+<h2>8. Summary</h2>
+<p>A function is a reusable named block. A prototype declares it, a definition implements it and a call executes it. Functions are grouped by whether they take arguments and return values.</p>
+<hr />
+<p><a href="Introduction.html">Back to Unit Introduction</a> | <a href="Topic-02-Call-by-Value-and-Call-by-Reference.html">Next: Call by Value and Call by Reference</a></p>
+</article></main>
+<footer class="pagefoot"><span>Independent student-maintained learning resource · Not an official university publication</span><a href="../../../../index.html">Return to homepage ↑</a></footer>
+</body></html>

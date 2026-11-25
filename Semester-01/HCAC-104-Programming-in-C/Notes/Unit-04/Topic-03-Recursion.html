@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f6f2"><title>Topic 3: Recursion · RJU BCA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f7f6f2;--ink:#20251f;--muted:#74796f;--line:#e3e3da;--green:#64846d;--blue:#28647c;--white:#fffefa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.75 'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#286b80;text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:#1c4654}
+.sitebar{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(5vw,calc((100vw - 1100px)/2));background:rgba(255,254,250,.82)}
+.brand{font:600 22px Georgia,serif;color:#1c211c;text-decoration:none;letter-spacing:-1px}.brand span{color:#789b78}.sitebar a:last-child{font-size:12px;font-weight:600;text-decoration:none}
+.wrap{max-width:900px;margin:58px auto 90px;padding:0 28px}.kicker{font-size:10px;letter-spacing:2px;font-weight:700;color:#66836d;margin:0 0 14px;text-transform:uppercase}
+article{background:var(--white);border:1px solid var(--line);padding:clamp(24px,5vw,58px);box-shadow:0 15px 45px rgba(31,39,30,.045)}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif;line-height:1.2;letter-spacing:-.5px;color:#1d241e}
+h1{font-size:clamp(32px,5vw,48px);margin:0 0 25px}h2{font-size:27px;margin:42px 0 15px;padding-bottom:9px;border-bottom:1px solid var(--line)}h3{font-size:21px;margin:30px 0 12px}
+p{margin:0 0 17px;color:#4d534b}ul,ol{padding-left:25px;color:#4d534b}li{margin:5px 0}
+blockquote{margin:22px 0;padding:15px 20px;border-left:3px solid #89a98b;background:#f0f2eb;color:#646c60}blockquote p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:22px 0 28px;font-size:13px;display:block;overflow-x:auto}th,td{padding:11px 13px;text-align:left;border:1px solid #e5e6df;vertical-align:top}th{background:#edf1e9;color:#344638;font-weight:700}tr:nth-child(even) td{background:#fbfbf7}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#eff1ec;padding:2px 5px;border-radius:4px;font-size:.9em}pre{overflow:auto;background:#18211d;color:#edf3eb;padding:19px;border-radius:7px;line-height:1.55}pre code{background:none;color:inherit;padding:0}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}.pagefoot{max-width:900px;margin:-55px auto 45px;padding:0 28px;color:#888d82;font-size:11px;display:flex;justify-content:space-between;gap:20px}.pagefoot a{color:#55745e;text-decoration:none}
+@media(max-width:600px){.sitebar{height:60px;padding:0 20px}.wrap{margin:28px auto 70px;padding:0 14px}article{padding:24px 18px}h2{font-size:23px}.pagefoot{padding:0 16px;flex-direction:column}}
+</style></head><body>
+<header class="sitebar"><a class="brand" href="../../../../index.html">r<span>.</span> RJU BCA</a><a href="../../../../index.html">← Back to learning space</a></header>
+<main class="wrap"><p class="kicker">RJU BCA · STUDENT ARCHIVE</p><article><h1>Topic 3: Recursion</h1>
+<p><strong>Unit IV | HCAC-104 Programming in C</strong></p>
+<h2>1. Introduction</h2>
+<h3>1.1 Definition</h3>
+<p><strong>Recursion</strong> is a technique in which a function calls <strong>itself</strong>, directly or indirectly, to solve a smaller version of the same problem.</p>
+<h3>1.2 Two Essential Parts</h3>
+<ol>
+<li><strong>Base case:</strong> a simple situation answered directly; it stops the recursion.</li>
+<li><strong>Recursive case:</strong> the function calls itself with a <strong>smaller</strong> problem that moves toward the base case.</li>
+</ol>
+<p>Without a reachable base case the calls never stop and the program crashes with a stack overflow.</p>
+<h2>2. Example: Factorial</h2>
+<p>Mathematical definition: <code>n! = n x (n-1)!</code> and <code>0! = 1! = 1</code>.</p>
+<pre><code class="language-c">unsigned long long fact(int n)
+{
+    if (n &lt;= 1)
+        return 1;                 /* base case */
+    return n * fact(n - 1);       /* recursive case */
+}
+</code></pre>
+<h3>2.1 Tracing <code>fact(4)</code></h3>
+<pre><code class="language-text">fact(4) = 4 * fact(3)
+              fact(3) = 3 * fact(2)
+                            fact(2) = 2 * fact(1)
+                                          fact(1) = 1   &lt;- base case
+              fact(2) = 2 * 1 = 2
+              fact(3) = 3 * 2 = 6
+fact(4) = 4 * 6 = 24
+</code></pre>
+<p>Tested: <a href="../../Programs/Program-25-Factorial-using-Recursion/README.html">Program 25</a>.</p>
+<h2>3. Example: Fibonacci</h2>
+<pre><code class="language-c">long fib(int n)
+{
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+    return fib(n - 1) + fib(n - 2);
+}
+</code></pre>
+<p>Each call makes two more calls, so the work repeats and grows quickly for large <code>n</code>. Tested: <a href="../../Programs/Program-26-Fibonacci-using-Recursion/README.html">Program 26</a>.</p>
+<h2>4. Example: GCD by Euclid's Algorithm</h2>
+<pre><code class="language-c">int gcd(int a, int b)
+{
+    if (b == 0)
+        return a;
+    return gcd(b, a % b);
+}
+</code></pre>
+<p>Trace of <code>gcd(48, 18)</code>: <code>gcd(48,18)</code> -&gt; <code>gcd(18,12)</code> -&gt; <code>gcd(12,6)</code> -&gt; <code>gcd(6,0)</code> -&gt; <strong>6</strong>. Tested: <a href="../../Programs/Program-27-GCD-using-Recursion/README.html">Program 27</a>.</p>
+<h2>5. How Recursion Uses Memory</h2>
+<p>Each call gets its own <strong>stack frame</strong> holding its parameters and local variables. Frames are stacked while the calls go deeper and removed one by one as each call returns.</p>
+<h2>6. Recursion vs Iteration</h2>
+<table>
+<thead>
+<tr>
+  <th>Basis</th>
+  <th>Recursion</th>
+  <th>Iteration (loops)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Mechanism</td>
+  <td>Function calls itself</td>
+  <td><code>for</code>, <code>while</code>, <code>do-while</code></td>
+</tr>
+<tr>
+  <td>Termination</td>
+  <td>Base case</td>
+  <td>Loop condition</td>
+</tr>
+<tr>
+  <td>Memory</td>
+  <td>Uses a stack frame per call</td>
+  <td>Uses fixed memory</td>
+</tr>
+<tr>
+  <td>Speed</td>
+  <td>Slower (call overhead)</td>
+  <td>Usually faster</td>
+</tr>
+<tr>
+  <td>Code</td>
+  <td>Short, natural for recursive problems</td>
+  <td>Often longer</td>
+</tr>
+<tr>
+  <td>Risk</td>
+  <td>Stack overflow if no base case</td>
+  <td>Infinite loop if no update</td>
+</tr>
+</tbody>
+</table>
+<h2>7. Advantages and Disadvantages</h2>
+<table>
+<thead>
+<tr>
+  <th>Advantages</th>
+  <th>Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Shorter, cleaner code for problems such as factorial and trees</td>
+  <td>Uses more memory</td>
+</tr>
+<tr>
+  <td>Natural fit for self-similar problems</td>
+  <td>Slower because of repeated calls</td>
+</tr>
+<tr>
+  <td>Easier to prove correct by induction</td>
+  <td>Hard to debug for beginners</td>
+</tr>
+</tbody>
+</table>
+<h2>8. Exam-Oriented Answers</h2>
+<h3>5-mark: What is recursion? Explain with an example.</h3>
+<p>Definition, base and recursive case, the factorial function, the trace of <code>fact(4)</code>, and the conclusion.</p>
+<h3>5-mark: Differentiate between recursion and iteration.</h3>
+<p>Use the table in section 6.</p>
+<h3>10-mark: Explain recursion with programs for factorial, Fibonacci and GCD.</h3>
+<p>Definition and rules; the three functions; one trace; sample output from Programs 25 to 27; advantages and disadvantages; comparison with iteration.</p>
+<h2>9. Summary</h2>
+<p>A recursive function solves a problem by calling itself on a smaller input until it reaches a base case. It is elegant but uses extra stack memory, so choose it where it makes the solution clearer.</p>
+<hr />
+<p><a href="Topic-02-Call-by-Value-and-Call-by-Reference.html">Previous: Call by Value and Call by Reference</a> | <a href="Introduction.html">Back to Unit Introduction</a></p>
+</article></main>
+<footer class="pagefoot"><span>Independent student-maintained learning resource · Not an official university publication</span><a href="../../../../index.html">Return to homepage ↑</a></footer>
+</body></html>

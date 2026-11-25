@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f6f2"><title>Topic 4: Random Access and Error Handling · RJU BCA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f7f6f2;--ink:#20251f;--muted:#74796f;--line:#e3e3da;--green:#64846d;--blue:#28647c;--white:#fffefa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.75 'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#286b80;text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:#1c4654}
+.sitebar{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(5vw,calc((100vw - 1100px)/2));background:rgba(255,254,250,.82)}
+.brand{font:600 22px Georgia,serif;color:#1c211c;text-decoration:none;letter-spacing:-1px}.brand span{color:#789b78}.sitebar a:last-child{font-size:12px;font-weight:600;text-decoration:none}
+.wrap{max-width:900px;margin:58px auto 90px;padding:0 28px}.kicker{font-size:10px;letter-spacing:2px;font-weight:700;color:#66836d;margin:0 0 14px;text-transform:uppercase}
+article{background:var(--white);border:1px solid var(--line);padding:clamp(24px,5vw,58px);box-shadow:0 15px 45px rgba(31,39,30,.045)}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif;line-height:1.2;letter-spacing:-.5px;color:#1d241e}
+h1{font-size:clamp(32px,5vw,48px);margin:0 0 25px}h2{font-size:27px;margin:42px 0 15px;padding-bottom:9px;border-bottom:1px solid var(--line)}h3{font-size:21px;margin:30px 0 12px}
+p{margin:0 0 17px;color:#4d534b}ul,ol{padding-left:25px;color:#4d534b}li{margin:5px 0}
+blockquote{margin:22px 0;padding:15px 20px;border-left:3px solid #89a98b;background:#f0f2eb;color:#646c60}blockquote p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:22px 0 28px;font-size:13px;display:block;overflow-x:auto}th,td{padding:11px 13px;text-align:left;border:1px solid #e5e6df;vertical-align:top}th{background:#edf1e9;color:#344638;font-weight:700}tr:nth-child(even) td{background:#fbfbf7}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#eff1ec;padding:2px 5px;border-radius:4px;font-size:.9em}pre{overflow:auto;background:#18211d;color:#edf3eb;padding:19px;border-radius:7px;line-height:1.55}pre code{background:none;color:inherit;padding:0}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}.pagefoot{max-width:900px;margin:-55px auto 45px;padding:0 28px;color:#888d82;font-size:11px;display:flex;justify-content:space-between;gap:20px}.pagefoot a{color:#55745e;text-decoration:none}
+@media(max-width:600px){.sitebar{height:60px;padding:0 20px}.wrap{margin:28px auto 70px;padding:0 14px}article{padding:24px 18px}h2{font-size:23px}.pagefoot{padding:0 16px;flex-direction:column}}
+</style></head><body>
+<header class="sitebar"><a class="brand" href="../../../../index.html">r<span>.</span> RJU BCA</a><a href="../../../../index.html">← Back to learning space</a></header>
+<main class="wrap"><p class="kicker">RJU BCA · STUDENT ARCHIVE</p><article><h1>Topic 4: Random Access and Error Handling</h1>
+<p><strong>Unit VII | HCAC-104 Programming in C</strong></p>
+<h2>1. Random Access Functions</h2>
+<p>Every open file has a <strong>file position indicator</strong> that marks where the next read or write will happen. Random access means moving that indicator directly.</p>
+<h3>1.1 <code>fseek()</code></h3>
+<pre><code class="language-c">int fseek(FILE *fp, long offset, int origin);
+</code></pre>
+<table>
+<thead>
+<tr>
+  <th><code>origin</code></th>
+  <th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>SEEK_SET</code></td>
+  <td>Offset measured from the beginning of the file</td>
+</tr>
+<tr>
+  <td><code>SEEK_CUR</code></td>
+  <td>From the current position</td>
+</tr>
+<tr>
+  <td><code>SEEK_END</code></td>
+  <td>From the end of the file</td>
+</tr>
+</tbody>
+</table>
+<p>Returns 0 on success. Example: jump to the 4th <code>int</code> (index 3):</p>
+<pre><code class="language-c">fseek(fp, 3 * (long)sizeof(int), SEEK_SET);
+</code></pre>
+<p>For text files only <code>SEEK_SET</code> with a value from <code>ftell</code>, or offset 0, is reliably portable; random access works best with <strong>binary</strong> files of fixed-size records.</p>
+<h3>1.2 <code>ftell()</code></h3>
+<pre><code class="language-c">long ftell(FILE *fp);
+</code></pre>
+<p>Returns the current position in bytes from the beginning of the file (or -1 on error).</p>
+<h3>1.3 <code>rewind()</code></h3>
+<pre><code class="language-c">void rewind(FILE *fp);
+</code></pre>
+<p>Moves the position back to the start of the file.</p>
+<p>Tested: <a href="../../Programs/Program-50-Random-Access-fseek-ftell/README.html">Program 50: Random Access</a>.</p>
+<h3>1.4 Finding a Record by Number</h3>
+<p>If each record has <code>sizeof(struct Record)</code> bytes, record number <code>k</code> (counting from 0) starts at byte <code>k * sizeof(struct Record)</code>:</p>
+<pre><code class="language-c">fseek(fp, k * (long)sizeof(struct Record), SEEK_SET);
+fread(&amp;r, sizeof(struct Record), 1, fp);
+</code></pre>
+<h2>2. Error Handling in File Operations</h2>
+<p>Operations on files can fail: the file may be missing, the disk may be full, permissions may be wrong. A robust program <strong>checks</strong> results.</p>
+<h3>2.1 Check the Return Value of <code>fopen</code></h3>
+<pre><code class="language-c">FILE *fp = fopen(&quot;report.txt&quot;, &quot;r&quot;);
+if (fp == NULL) {
+    perror(&quot;report.txt&quot;);      /* prints: report.txt: No such file or directory */
+    return 1;
+}
+</code></pre>
+<p><code>perror(msg)</code> prints <code>msg</code>, a colon, and the system's description of the last error. (The exact wording depends on the system.) It writes to the <strong>standard error</strong> stream.</p>
+<h3>2.2 <code>feof()</code> and <code>ferror()</code></h3>
+<table>
+<thead>
+<tr>
+  <th>Function</th>
+  <th>Returns non-zero when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>feof(fp)</code></td>
+  <td>The end of the file has been reached</td>
+</tr>
+<tr>
+  <td><code>ferror(fp)</code></td>
+  <td>A read or write error occurred</td>
+</tr>
+<tr>
+  <td><code>clearerr(fp)</code></td>
+  <td>(Clears both indicators)</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-c">while ((ch = fgetc(fp)) != EOF)
+    count++;
+
+if (ferror(fp))
+    printf(&quot;A read error occurred.\n&quot;);
+else if (feof(fp))
+    printf(&quot;End of file reached.\n&quot;);
+</code></pre>
+<p><strong>Common mistake:</strong> <code>while (!feof(fp))</code> as the loop test. <code>feof</code> becomes true only <strong>after</strong> a read tries to go past the end, so the loop runs once too often. Test the return value of the read function instead (<code>fgets(...) != NULL</code>, <code>fscanf(...) == 3</code>, <code>fgetc(...) != EOF</code>).</p>
+<h3>2.3 Other Checks</h3>
+<ul>
+<li><code>fread</code>/<code>fwrite</code> return the number of items transferred; compare with the count requested.</li>
+<li><code>fclose</code> returns 0 on success.</li>
+<li>The standard header <code>&lt;errno.h&gt;</code> provides <code>errno</code> for error codes.</li>
+</ul>
+<p>Tested: <a href="../../Programs/Program-51-File-Error-Handling/README.html">Program 51: File Error Handling</a>.</p>
+<h2>3. Exam-Oriented Answers</h2>
+<h3>5-mark: Explain <code>fseek()</code>, <code>ftell()</code> and <code>rewind()</code>.</h3>
+<p>Syntax and purpose of each, the <code>origin</code> table, and the example jumping to a record.</p>
+<h3>5-mark: How is error handling done in file operations?</h3>
+<p><code>NULL</code> check after <code>fopen</code>, <code>perror</code>, <code>feof</code>, <code>ferror</code>, return values of <code>fread</code>/<code>fwrite</code>, and the loop-test advice.</p>
+<h3>10-mark: Explain random access files with a program.</h3>
+<p>Define sequential vs random access, the three functions, record-position formula, and present Program 50 with its tested output.</p>
+<h2>4. Summary</h2>
+<p><code>fseek</code>, <code>ftell</code> and <code>rewind</code> move and report the file position, enabling random access to fixed-size records. Reliable programs check <code>fopen</code> for <code>NULL</code>, test read results, and use <code>perror</code>, <code>feof</code> and <code>ferror</code> to report problems.</p>
+<hr />
+<p><a href="Topic-03-Formatted-Character-and-Direct-IO.html">Previous: Formatted, Character and Direct I/O</a> | <a href="Introduction.html">Back to Unit Introduction</a></p>
+</article></main>
+<footer class="pagefoot"><span>Independent student-maintained learning resource · Not an official university publication</span><a href="../../../../index.html">Return to homepage ↑</a></footer>
+</body></html>

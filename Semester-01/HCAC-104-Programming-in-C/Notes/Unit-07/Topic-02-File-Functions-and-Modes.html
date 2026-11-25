@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f6f2"><title>Topic 2: `fopen`, `fclose`, `fflush`, `freopen` and File Modes · RJU BCA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f7f6f2;--ink:#20251f;--muted:#74796f;--line:#e3e3da;--green:#64846d;--blue:#28647c;--white:#fffefa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.75 'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#286b80;text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:#1c4654}
+.sitebar{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(5vw,calc((100vw - 1100px)/2));background:rgba(255,254,250,.82)}
+.brand{font:600 22px Georgia,serif;color:#1c211c;text-decoration:none;letter-spacing:-1px}.brand span{color:#789b78}.sitebar a:last-child{font-size:12px;font-weight:600;text-decoration:none}
+.wrap{max-width:900px;margin:58px auto 90px;padding:0 28px}.kicker{font-size:10px;letter-spacing:2px;font-weight:700;color:#66836d;margin:0 0 14px;text-transform:uppercase}
+article{background:var(--white);border:1px solid var(--line);padding:clamp(24px,5vw,58px);box-shadow:0 15px 45px rgba(31,39,30,.045)}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif;line-height:1.2;letter-spacing:-.5px;color:#1d241e}
+h1{font-size:clamp(32px,5vw,48px);margin:0 0 25px}h2{font-size:27px;margin:42px 0 15px;padding-bottom:9px;border-bottom:1px solid var(--line)}h3{font-size:21px;margin:30px 0 12px}
+p{margin:0 0 17px;color:#4d534b}ul,ol{padding-left:25px;color:#4d534b}li{margin:5px 0}
+blockquote{margin:22px 0;padding:15px 20px;border-left:3px solid #89a98b;background:#f0f2eb;color:#646c60}blockquote p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:22px 0 28px;font-size:13px;display:block;overflow-x:auto}th,td{padding:11px 13px;text-align:left;border:1px solid #e5e6df;vertical-align:top}th{background:#edf1e9;color:#344638;font-weight:700}tr:nth-child(even) td{background:#fbfbf7}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#eff1ec;padding:2px 5px;border-radius:4px;font-size:.9em}pre{overflow:auto;background:#18211d;color:#edf3eb;padding:19px;border-radius:7px;line-height:1.55}pre code{background:none;color:inherit;padding:0}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}.pagefoot{max-width:900px;margin:-55px auto 45px;padding:0 28px;color:#888d82;font-size:11px;display:flex;justify-content:space-between;gap:20px}.pagefoot a{color:#55745e;text-decoration:none}
+@media(max-width:600px){.sitebar{height:60px;padding:0 20px}.wrap{margin:28px auto 70px;padding:0 14px}article{padding:24px 18px}h2{font-size:23px}.pagefoot{padding:0 16px;flex-direction:column}}
+</style></head><body>
+<header class="sitebar"><a class="brand" href="../../../../index.html">r<span>.</span> RJU BCA</a><a href="../../../../index.html">← Back to learning space</a></header>
+<main class="wrap"><p class="kicker">RJU BCA · STUDENT ARCHIVE</p><article><h1>Topic 2: <code>fopen</code>, <code>fclose</code>, <code>fflush</code>, <code>freopen</code> and File Modes</h1>
+<p><strong>Unit VII | HCAC-104 Programming in C</strong></p>
+<h2>1. <code>fopen()</code></h2>
+<pre><code class="language-c">FILE *fopen(const char *filename, const char *mode);
+</code></pre>
+<p>Opens the file and returns a <code>FILE *</code>. On failure (file not found, no permission) it returns <strong><code>NULL</code></strong>, so always check:</p>
+<pre><code class="language-c">FILE *fp = fopen(&quot;data.txt&quot;, &quot;r&quot;);
+if (fp == NULL) {
+    printf(&quot;Cannot open data.txt\n&quot;);
+    return 1;
+}
+</code></pre>
+<h2>2. File Modes</h2>
+<table>
+<thead>
+<tr>
+  <th>Mode</th>
+  <th>Meaning</th>
+  <th>If the file exists</th>
+  <th>If it does not exist</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>&quot;r&quot;</code></td>
+  <td>Read</td>
+  <td>Opened from the start</td>
+  <td>Fails (<code>NULL</code>)</td>
+</tr>
+<tr>
+  <td><code>&quot;w&quot;</code></td>
+  <td>Write</td>
+  <td><strong>Erased</strong> (emptied)</td>
+  <td>Created</td>
+</tr>
+<tr>
+  <td><code>&quot;a&quot;</code></td>
+  <td>Append</td>
+  <td>Writing goes at the end; old data kept</td>
+  <td>Created</td>
+</tr>
+<tr>
+  <td><code>&quot;r+&quot;</code></td>
+  <td>Read and write</td>
+  <td>Opened from the start</td>
+  <td>Fails</td>
+</tr>
+<tr>
+  <td><code>&quot;w+&quot;</code></td>
+  <td>Read and write</td>
+  <td><strong>Erased</strong></td>
+  <td>Created</td>
+</tr>
+<tr>
+  <td><code>&quot;a+&quot;</code></td>
+  <td>Read and append</td>
+  <td>Writing at the end</td>
+  <td>Created</td>
+</tr>
+</tbody>
+</table>
+<p>Add <code>b</code> for binary files: <code>&quot;rb&quot;</code>, <code>&quot;wb&quot;</code>, <code>&quot;ab&quot;</code>, <code>&quot;rb+&quot;</code> (also written <code>&quot;r+b&quot;</code>), <code>&quot;wb+&quot;</code>, <code>&quot;ab+&quot;</code>.</p>
+<p><strong>Warning:</strong> <code>&quot;w&quot;</code> destroys existing content without asking.</p>
+<h2>3. <code>fclose()</code></h2>
+<pre><code class="language-c">int fclose(FILE *fp);
+</code></pre>
+<p>Flushes buffered data, closes the file and releases resources. Returns 0 on success. Always close every file you open; unclosed files may lose data.</p>
+<h2>4. <code>fflush()</code></h2>
+<pre><code class="language-c">int fflush(FILE *fp);
+</code></pre>
+<p>Output is <strong>buffered</strong> (held in memory before being written). <code>fflush</code> forces buffered output to be written to the file immediately, for example after printing a prompt. <code>fflush(stdout)</code> flushes screen output.</p>
+<p>Using <code>fflush</code> on an input stream such as <code>stdin</code> is not defined by the C standard, so do not rely on it to clear the keyboard buffer.</p>
+<h2>5. <code>freopen()</code></h2>
+<pre><code class="language-c">FILE *freopen(const char *filename, const char *mode, FILE *stream);
+</code></pre>
+<p>Closes the stream and reopens it with a different file or mode. A classic use is to <strong>redirect</strong> a standard stream:</p>
+<pre><code class="language-c">freopen(&quot;output.txt&quot;, &quot;w&quot;, stdout);
+printf(&quot;This line goes into output.txt, not the screen.\n&quot;);
+</code></pre>
+<p>After this, everything printed with <code>printf</code> is written to <code>output.txt</code>.</p>
+<h2>6. Writing, Reading and Appending Examples</h2>
+<table>
+<thead>
+<tr>
+  <th>Task</th>
+  <th>Tested program</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Create a file and write lines</td>
+  <td><a href="../../Programs/Program-44-Write-to-a-Text-File/README.html">Program 44</a></td>
+</tr>
+<tr>
+  <td>Read a file line by line</td>
+  <td><a href="../../Programs/Program-45-Read-from-a-Text-File/README.html">Program 45</a></td>
+</tr>
+<tr>
+  <td>Append to a file</td>
+  <td><a href="../../Programs/Program-46-Append-to-a-Text-File/README.html">Program 46</a></td>
+</tr>
+</tbody>
+</table>
+<h2>7. Exam-Oriented Answers</h2>
+<h3>5-mark: Explain <code>fopen()</code> and the different file modes.</h3>
+<p>Syntax, the <code>NULL</code> check, the mode table (at least <code>r</code>, <code>w</code>, <code>a</code>, <code>r+</code>, <code>w+</code>, <code>a+</code>), and the warning about <code>&quot;w&quot;</code>.</p>
+<h3>5-mark: Write short notes on <code>fclose</code>, <code>fflush</code> and <code>freopen</code>.</h3>
+<p>One paragraph each with syntax and a one-line example.</p>
+<h2>8. Summary</h2>
+<p><code>fopen</code> opens a file in a mode and returns <code>NULL</code> on failure; <code>fclose</code> closes it; <code>fflush</code> writes buffered output immediately; <code>freopen</code> re-associates a stream with another file, for example to redirect <code>stdout</code>.</p>
+<hr />
+<p><a href="Topic-01-File-Handling-Concepts.html">Previous: File Handling Concepts</a> | <a href="Topic-03-Formatted-Character-and-Direct-IO.html">Next: Formatted, Character and Direct I/O</a></p>
+</article></main>
+<footer class="pagefoot"><span>Independent student-maintained learning resource · Not an official university publication</span><a href="../../../../index.html">Return to homepage ↑</a></footer>
+</body></html>

@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f6f2"><title>HCAC-104 - Programming in C · RJU BCA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f7f6f2;--ink:#20251f;--muted:#74796f;--line:#e3e3da;--green:#64846d;--blue:#28647c;--white:#fffefa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.75 'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#286b80;text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:#1c4654}
+.sitebar{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(5vw,calc((100vw - 1100px)/2));background:rgba(255,254,250,.82)}
+.brand{font:600 22px Georgia,serif;color:#1c211c;text-decoration:none;letter-spacing:-1px}.brand span{color:#789b78}.sitebar a:last-child{font-size:12px;font-weight:600;text-decoration:none}
+.wrap{max-width:900px;margin:58px auto 90px;padding:0 28px}.kicker{font-size:10px;letter-spacing:2px;font-weight:700;color:#66836d;margin:0 0 14px;text-transform:uppercase}
+article{background:var(--white);border:1px solid var(--line);padding:clamp(24px,5vw,58px);box-shadow:0 15px 45px rgba(31,39,30,.045)}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif;line-height:1.2;letter-spacing:-.5px;color:#1d241e}
+h1{font-size:clamp(32px,5vw,48px);margin:0 0 25px}h2{font-size:27px;margin:42px 0 15px;padding-bottom:9px;border-bottom:1px solid var(--line)}h3{font-size:21px;margin:30px 0 12px}
+p{margin:0 0 17px;color:#4d534b}ul,ol{padding-left:25px;color:#4d534b}li{margin:5px 0}
+blockquote{margin:22px 0;padding:15px 20px;border-left:3px solid #89a98b;background:#f0f2eb;color:#646c60}blockquote p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:22px 0 28px;font-size:13px;display:block;overflow-x:auto}th,td{padding:11px 13px;text-align:left;border:1px solid #e5e6df;vertical-align:top}th{background:#edf1e9;color:#344638;font-weight:700}tr:nth-child(even) td{background:#fbfbf7}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#eff1ec;padding:2px 5px;border-radius:4px;font-size:.9em}pre{overflow:auto;background:#18211d;color:#edf3eb;padding:19px;border-radius:7px;line-height:1.55}pre code{background:none;color:inherit;padding:0}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}.pagefoot{max-width:900px;margin:-55px auto 45px;padding:0 28px;color:#888d82;font-size:11px;display:flex;justify-content:space-between;gap:20px}.pagefoot a{color:#55745e;text-decoration:none}
+@media(max-width:600px){.sitebar{height:60px;padding:0 20px}.wrap{margin:28px auto 70px;padding:0 14px}article{padding:24px 18px}h2{font-size:23px}.pagefoot{padding:0 16px;flex-direction:column}}
+</style></head><body>
+<header class="sitebar"><a class="brand" href="../../index.html">r<span>.</span> RJU BCA</a><a href="../../index.html">← Back to learning space</a></header>
+<main class="wrap"><p class="kicker">RJU BCA · STUDENT ARCHIVE</p><article><h1>HCAC-104 - Programming in C</h1>
+<p><strong>Semester:</strong> 1 (First Year) | <strong>Credit hours:</strong> 3 | <strong>Full marks:</strong> 60 + 20 + 20 (pass 24 + 8 + 8) | <strong>Nature:</strong> Theory + Lab</p>
+<h2>Subject Introduction</h2>
+<p>This course teaches structured programming in C: writing, compiling, debugging and running programs, designing algorithms and flowcharts, and using arrays, pointers, strings, structures, files and basic graphics.</p>
+<p>Source: official RJU curriculum outline (<a href="https://rju.edu.np/wp-content/uploads/2018/08/BCA-full-syllabus-1.pdf">PDF</a>, <a href="https://rju.edu.np/course/bca/">programme page</a>), transcribed and condensed here.</p>
+<h2>Syllabus Units</h2>
+<p>Allotted lecture hours listed in the outline: <strong>45</strong>.</p>
+<table>
+<thead>
+<tr>
+  <th>Unit</th>
+  <th>Title</th>
+  <th>Hours</th>
+  <th>Topics (condensed)</th>
+  <th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>I</td>
+  <td><a href="Notes/Unit-01/Introduction.html">Introduction to Programming Concept</a></td>
+  <td>4</td>
+  <td>Language translators, syntax and semantics, algorithm/flowchart/pseudocode, features of a good program, procedural, modular and object-oriented techniques.</td>
+  <td>Notes complete</td>
+</tr>
+<tr>
+  <td>II</td>
+  <td><a href="Notes/Unit-02/Introduction.html">Introduction to C</a></td>
+  <td>6</td>
+  <td>History, structure of a C program, character set, tokens, keywords, comments, variables and constants, data types, type conversion, input/output, operators.</td>
+  <td>Notes complete</td>
+</tr>
+<tr>
+  <td>III</td>
+  <td><a href="Notes/Unit-03/Introduction.html">Control Structure</a></td>
+  <td>7</td>
+  <td>if, if-else, nested if-else, switch, conditional operator, while, do-while, for, nested loops, goto, break, continue, exit.</td>
+  <td>Notes complete</td>
+</tr>
+<tr>
+  <td>IV</td>
+  <td><a href="Notes/Unit-04/Introduction.html">Function</a></td>
+  <td>6</td>
+  <td>Function definition and return, prototype, call by value, call by reference, recursion.</td>
+  <td>Notes complete</td>
+</tr>
+<tr>
+  <td>V</td>
+  <td><a href="Notes/Unit-05/Introduction.html">Array, Pointer and String</a></td>
+  <td>7</td>
+  <td>Arrays (one and multi-dimensional), strings and string functions, passing arrays and strings to functions, pointers, pointer arithmetic, arrays and pointers.</td>
+  <td>Notes complete</td>
+</tr>
+<tr>
+  <td>VI</td>
+  <td><a href="Notes/Unit-06/Introduction.html">Structure and Union</a></td>
+  <td>7</td>
+  <td>Structures, initialisation and access, arrays of structures, structures and functions, pointer to structure, union, union vs structure.</td>
+  <td>Notes complete</td>
+</tr>
+<tr>
+  <td>VII</td>
+  <td><a href="Notes/Unit-07/Introduction.html">Input Output and File Handling</a></td>
+  <td>5</td>
+  <td>File handling concepts and access methods, fopen, fclose, fflush, freopen, formatted/character/direct I/O, random access, error handling.</td>
+  <td>Notes complete</td>
+</tr>
+<tr>
+  <td>VIII</td>
+  <td><a href="Notes/Unit-08/Introduction.html">Introduction to Graphics</a></td>
+  <td>3</td>
+  <td>Graphics modes, initialisation, graphics functions.</td>
+  <td>Notes complete</td>
+</tr>
+</tbody>
+</table>
+<h2>Notes Navigation</h2>
+<ul>
+<li><strong>Unit I: Introduction to Programming Concept</strong> (<a href="Notes/Unit-01/Introduction.html">overview</a>)<ul>
+<li><a href="Notes/Unit-01/Topic-01-Language-Translators.html">Topic 1: Programming Languages and Language Translators</a></li>
+<li><a href="Notes/Unit-01/Topic-02-Programming-Design-Tools.html">Topic 2: Programming Design Tools (Algorithm, Flowchart, Pseudocode)</a></li>
+<li><a href="Notes/Unit-01/Topic-03-Features-of-a-Good-Program.html">Topic 3: Features of a Good Program</a></li>
+<li><a href="Notes/Unit-01/Topic-04-Programming-Techniques.html">Topic 4: Programming Techniques (Procedural, Modular, Object-Oriented)</a></li>
+</ul>
+</li>
+<li><strong>Unit II: Introduction to C</strong> (<a href="Notes/Unit-02/Introduction.html">overview</a>)<ul>
+<li><a href="Notes/Unit-02/Topic-01-History-and-Structure-of-a-C-Program.html">Topic 1: History of C and Structure of a C Program</a></li>
+<li><a href="Notes/Unit-02/Topic-02-Character-Set-Tokens-Keywords-and-Comments.html">Topic 2: Character Set, Tokens, Keywords and Comments</a></li>
+<li><a href="Notes/Unit-02/Topic-03-Variables-Constants-and-Data-Types.html">Topic 3: Variables, Constants and Data Types</a></li>
+<li><a href="Notes/Unit-02/Topic-04-Type-Conversion-and-Input-Output.html">Topic 4: Type Conversion, Input and Output</a></li>
+<li><a href="Notes/Unit-02/Topic-05-Operators.html">Topic 5: Operators</a></li>
+</ul>
+</li>
+<li><strong>Unit III: Control Structure</strong> (<a href="Notes/Unit-03/Introduction.html">overview</a>)<ul>
+<li><a href="Notes/Unit-03/Topic-01-Selection-Statements.html">Topic 1: Selection Statements</a></li>
+<li><a href="Notes/Unit-03/Topic-02-Looping-Statements.html">Topic 2: Looping Statements</a></li>
+<li><a href="Notes/Unit-03/Topic-03-Jump-Statements.html">Topic 3: Jump Statements</a></li>
+</ul>
+</li>
+<li><strong>Unit IV: Function</strong> (<a href="Notes/Unit-04/Introduction.html">overview</a>)<ul>
+<li><a href="Notes/Unit-04/Topic-01-Function-Concept.html">Topic 1: Function Definition, Return and Prototype</a></li>
+<li><a href="Notes/Unit-04/Topic-02-Call-by-Value-and-Call-by-Reference.html">Topic 2: Call by Value and Call by Reference</a></li>
+<li><a href="Notes/Unit-04/Topic-03-Recursion.html">Topic 3: Recursion</a></li>
+</ul>
+</li>
+<li><strong>Unit V: Array, Pointer and String</strong> (<a href="Notes/Unit-05/Introduction.html">overview</a>)<ul>
+<li><a href="Notes/Unit-05/Topic-01-Arrays.html">Topic 1: Arrays</a></li>
+<li><a href="Notes/Unit-05/Topic-02-Multi-Dimensional-Arrays.html">Topic 2: Multi-Dimensional Arrays</a></li>
+<li><a href="Notes/Unit-05/Topic-03-Strings.html">Topic 3: Strings and String Functions</a></li>
+<li><a href="Notes/Unit-05/Topic-04-Pointers.html">Topic 4: Pointers</a></li>
+<li><a href="Notes/Unit-05/Topic-05-Pointers-Arrays-and-Functions.html">Topic 5: Pointers, Arrays and Functions</a></li>
+</ul>
+</li>
+<li><strong>Unit VI: Structure and Union</strong> (<a href="Notes/Unit-06/Introduction.html">overview</a>)<ul>
+<li><a href="Notes/Unit-06/Topic-01-Structures.html">Topic 1: Structures</a></li>
+<li><a href="Notes/Unit-06/Topic-02-Structures-Arrays-Functions-and-Pointers.html">Topic 2: Arrays of Structures, Structures with Functions and Pointer to Structure</a></li>
+<li><a href="Notes/Unit-06/Topic-03-Unions.html">Topic 3: Unions</a></li>
+</ul>
+</li>
+<li><strong>Unit VII: Input Output and File Handling</strong> (<a href="Notes/Unit-07/Introduction.html">overview</a>)<ul>
+<li><a href="Notes/Unit-07/Topic-01-File-Handling-Concepts.html">Topic 1: File Handling Concepts and Access Methods</a></li>
+<li><a href="Notes/Unit-07/Topic-02-File-Functions-and-Modes.html">Topic 2: <code>fopen</code>, <code>fclose</code>, <code>fflush</code>, <code>freopen</code> and File Modes</a></li>
+<li><a href="Notes/Unit-07/Topic-03-Formatted-Character-and-Direct-IO.html">Topic 3: Formatted, Character and Direct I/O</a></li>
+<li><a href="Notes/Unit-07/Topic-04-Random-Access-and-Error-Handling.html">Topic 4: Random Access and Error Handling</a></li>
+</ul>
+</li>
+<li><strong>Unit VIII: Introduction to Graphics</strong> (<a href="Notes/Unit-08/Introduction.html">overview</a>)<ul>
+<li><a href="Notes/Unit-08/Topic-01-Graphics-Modes-and-Initialization.html">Topic 1: Graphics Modes and Initialization</a></li>
+<li><a href="Notes/Unit-08/Topic-02-Graphics-Functions.html">Topic 2: Graphics Functions</a></li>
+</ul>
+</li>
+</ul>
+<h2>Programs (52 programs; 51 compiled and run)</h2>
+<p>Every program is a separate <code>.c</code> file with its own README showing the logic, compile command and real captured output. The exception is Program 52 (graphics), which needs the BGI library and is clearly marked as not tested here.</p>
+<ul>
+<li><strong>Unit I</strong><ul>
+<li><a href="Programs/Program-01-Largest-of-Three-Numbers/README.html">Program 01: Largest of Three Numbers</a></li>
+</ul>
+</li>
+<li><strong>Unit II</strong><ul>
+<li><a href="Programs/Program-02-Basic-Structure-of-a-C-Program/README.html">Program 02: Basic Structure of a C Program</a></li>
+<li><a href="Programs/Program-03-Sum-of-Two-Numbers/README.html">Program 03: Sum of Two Numbers</a></li>
+<li><a href="Programs/Program-04-Area-and-Circumference-of-Circle/README.html">Program 04: Area and Circumference of Circle</a></li>
+<li><a href="Programs/Program-05-Type-Conversion-Demo/README.html">Program 05: Type Conversion Demo</a></li>
+<li><a href="Programs/Program-06-Arithmetic-and-Relational-Operators/README.html">Program 06: Arithmetic and Relational Operators</a></li>
+<li><a href="Programs/Program-07-Increment-and-Decrement-Operators/README.html">Program 07: Increment and Decrement Operators</a></li>
+<li><a href="Programs/Program-08-Bitwise-Operators/README.html">Program 08: Bitwise Operators</a></li>
+<li><a href="Programs/Program-09-Logical-Operators/README.html">Program 09: Logical Operators</a></li>
+<li><a href="Programs/Program-10-Conditional-Operator/README.html">Program 10: Conditional Operator</a></li>
+</ul>
+</li>
+<li><strong>Unit III</strong><ul>
+<li><a href="Programs/Program-11-Even-or-Odd/README.html">Program 11: Even or Odd</a></li>
+<li><a href="Programs/Program-12-Grade-Calculator/README.html">Program 12: Grade Calculator</a></li>
+<li><a href="Programs/Program-13-Simple-Calculator-Switch/README.html">Program 13: Simple Calculator Switch</a></li>
+<li><a href="Programs/Program-14-Factorial-using-for-Loop/README.html">Program 14: Factorial using for Loop</a></li>
+<li><a href="Programs/Program-15-Reverse-a-Number-using-while/README.html">Program 15: Reverse a Number using while</a></li>
+<li><a href="Programs/Program-16-Menu-Driven-Program-do-while/README.html">Program 16: Menu Driven Program do while</a></li>
+<li><a href="Programs/Program-17-Fibonacci-Series/README.html">Program 17: Fibonacci Series</a></li>
+<li><a href="Programs/Program-18-Prime-Number-Check/README.html">Program 18: Prime Number Check</a></li>
+<li><a href="Programs/Program-19-Star-Triangle-Pattern/README.html">Program 19: Star Triangle Pattern</a></li>
+<li><a href="Programs/Program-20-Break-and-Continue-Demo/README.html">Program 20: Break and Continue Demo</a></li>
+<li><a href="Programs/Program-21-Goto-Statement-Demo/README.html">Program 21: Goto Statement Demo</a></li>
+</ul>
+</li>
+<li><strong>Unit IV</strong><ul>
+<li><a href="Programs/Program-22-Function-Types/README.html">Program 22: Function Types</a></li>
+<li><a href="Programs/Program-23-Call-by-Value-Swap/README.html">Program 23: Call by Value Swap</a></li>
+<li><a href="Programs/Program-24-Call-by-Reference-Swap/README.html">Program 24: Call by Reference Swap</a></li>
+<li><a href="Programs/Program-25-Factorial-using-Recursion/README.html">Program 25: Factorial using Recursion</a></li>
+<li><a href="Programs/Program-26-Fibonacci-using-Recursion/README.html">Program 26: Fibonacci using Recursion</a></li>
+<li><a href="Programs/Program-27-GCD-using-Recursion/README.html">Program 27: GCD using Recursion</a></li>
+</ul>
+</li>
+<li><strong>Unit V</strong><ul>
+<li><a href="Programs/Program-28-Array-Sum-Average-Max-Min/README.html">Program 28: Array Sum Average Max Min</a></li>
+<li><a href="Programs/Program-29-Bubble-Sort/README.html">Program 29: Bubble Sort</a></li>
+<li><a href="Programs/Program-30-Matrix-Addition/README.html">Program 30: Matrix Addition</a></li>
+<li><a href="Programs/Program-31-Matrix-Multiplication/README.html">Program 31: Matrix Multiplication</a></li>
+<li><a href="Programs/Program-32-String-Library-Functions/README.html">Program 32: String Library Functions</a></li>
+<li><a href="Programs/Program-33-Palindrome-Check/README.html">Program 33: Palindrome Check</a></li>
+<li><a href="Programs/Program-34-Count-Vowels-and-Consonants/README.html">Program 34: Count Vowels and Consonants</a></li>
+<li><a href="Programs/Program-35-Pointer-Basics/README.html">Program 35: Pointer Basics</a></li>
+<li><a href="Programs/Program-36-Pointer-Arithmetic-and-Arrays/README.html">Program 36: Pointer Arithmetic and Arrays</a></li>
+<li><a href="Programs/Program-37-Passing-an-Array-to-a-Function/README.html">Program 37: Passing an Array to a Function</a></li>
+<li><a href="Programs/Program-38-Passing-a-String-to-a-Function/README.html">Program 38: Passing a String to a Function</a></li>
+</ul>
+</li>
+<li><strong>Unit VI</strong><ul>
+<li><a href="Programs/Program-39-Student-Structure/README.html">Program 39: Student Structure</a></li>
+<li><a href="Programs/Program-40-Array-of-Structures/README.html">Program 40: Array of Structures</a></li>
+<li><a href="Programs/Program-41-Structure-and-Function/README.html">Program 41: Structure and Function</a></li>
+<li><a href="Programs/Program-42-Pointer-to-Structure/README.html">Program 42: Pointer to Structure</a></li>
+<li><a href="Programs/Program-43-Union-Demo/README.html">Program 43: Union Demo</a></li>
+</ul>
+</li>
+<li><strong>Unit VII</strong><ul>
+<li><a href="Programs/Program-44-Write-to-a-Text-File/README.html">Program 44: Write to a Text File</a></li>
+<li><a href="Programs/Program-45-Read-from-a-Text-File/README.html">Program 45: Read from a Text File</a></li>
+<li><a href="Programs/Program-46-Append-to-a-Text-File/README.html">Program 46: Append to a Text File</a></li>
+<li><a href="Programs/Program-47-Copy-a-File-Character-by-Character/README.html">Program 47: Copy a File Character by Character</a></li>
+<li><a href="Programs/Program-48-Formatted-File-IO/README.html">Program 48: Formatted File IO</a></li>
+<li><a href="Programs/Program-49-Binary-File-fwrite-fread/README.html">Program 49: Binary File fwrite fread</a></li>
+<li><a href="Programs/Program-50-Random-Access-fseek-ftell/README.html">Program 50: Random Access fseek ftell</a></li>
+<li><a href="Programs/Program-51-File-Error-Handling/README.html">Program 51: File Error Handling</a></li>
+</ul>
+</li>
+<li><strong>Unit VIII</strong><ul>
+<li><a href="Programs/Program-52-Graphics-Basic-Shapes/README.html">Program 52: Graphics Basic Shapes</a></li>
+</ul>
+</li>
+</ul>
+<h2>Practical / Lab Work</h2>
+<p>Official lab items from the outline and where to find them:</p>
+<table>
+<thead>
+<tr>
+  <th>Official lab item</th>
+  <th>Where covered</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Algorithm and flowchart design; basic C structure; variables, constants, I/O; operators and type conversion</td>
+  <td>Programs 01 to 10, <a href="Notes/Unit-01/Introduction.html">Unit I notes</a></td>
+</tr>
+<tr>
+  <td>if, if-else, switch; while, do-while, for, nested loops; jump statements</td>
+  <td>Programs 11 to 21</td>
+</tr>
+<tr>
+  <td>Functions, parameter passing, call by reference, recursion</td>
+  <td>Programs 22 to 27</td>
+</tr>
+<tr>
+  <td>Arrays, pointers, strings; structures and unions; structures with functions</td>
+  <td>Programs 28 to 43</td>
+</tr>
+<tr>
+  <td>File handling (open, read, write, append), random access files, text formatting</td>
+  <td>Programs 44 to 51</td>
+</tr>
+<tr>
+  <td>Graphics shapes and modes</td>
+  <td>Program 52 (untested, needs BGI)</td>
+</tr>
+<tr>
+  <td>Project: a simple C application with input, processing, output and storage in an external file</td>
+  <td><a href="Practical/Project-Student-Record-Manager/README.html">Student Record Manager</a></td>
+</tr>
+</tbody>
+</table>
+<h2>Exercises</h2>
+<p><a href="Exercises/Programming-Exercises.html">Programming Exercises</a>: 40 practice problems arranged by unit, with hints pointing to the tested programs.</p>
+<h2>Important Questions and MCQs</h2>
+<ul>
+<li><a href="Important-Questions.html">Important Questions</a>: short, long, programming and output-prediction questions, plus unit-wise revision topics. None are guaranteed exam questions.</li>
+<li><a href="MCQ-Questions.html">MCQ Questions</a>: 64 multiple-choice questions with answers and explanations.</li>
+</ul>
+<h2>References</h2>
+<p><a href="References.html">References</a>: books from the official outline and free online references.</p>
+<h2>Completion Status</h2>
+<table>
+<thead>
+<tr>
+  <th>Component</th>
+  <th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Syllabus units transcribed</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td>Notes (Units I to VIII)</td>
+  <td>Done: every unit has an overview and topic files with exam-oriented answers</td>
+</tr>
+<tr>
+  <td>Programs / Practical</td>
+  <td>Done: 52 programs and 1 project; 51 programs and the project were compiled and run; Program 52 (graphics) needs BGI and was not run</td>
+</tr>
+<tr>
+  <td>Exercises</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td>Important questions and MCQs</td>
+  <td>Done</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Syllabus vs supplementary:</strong> the unit and topic structure follows the official outline. A few explanations go slightly beyond the condensed topic lists to make the ideas clear for beginners (for example nested structures, the operator precedence table and <code>perror</code>), and <code>graphics.h</code> follows traditional Turbo C/BGI behaviour.</p>
+<p><strong>Known limits:</strong> there are no verified past papers yet, so no question is labelled as &quot;frequently asked&quot;. Programs are written for GCC on Linux with the C11 standard; Program 52 needs Turbo C/BGI or a compatible library.</p>
+<hr />
+<p><a href="../README.html">Back to Semester 01</a> | <a href="../../README.html">Back to repository home</a></p>
+</article></main>
+<footer class="pagefoot"><span>Independent student-maintained learning resource · Not an official university publication</span><a href="../../index.html">Return to homepage ↑</a></footer>
+</body></html>

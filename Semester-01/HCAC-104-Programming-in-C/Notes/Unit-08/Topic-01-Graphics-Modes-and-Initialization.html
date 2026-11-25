@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f6f2"><title>Topic 1: Graphics Modes and Initialization · RJU BCA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f7f6f2;--ink:#20251f;--muted:#74796f;--line:#e3e3da;--green:#64846d;--blue:#28647c;--white:#fffefa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.75 'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#286b80;text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:#1c4654}
+.sitebar{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(5vw,calc((100vw - 1100px)/2));background:rgba(255,254,250,.82)}
+.brand{font:600 22px Georgia,serif;color:#1c211c;text-decoration:none;letter-spacing:-1px}.brand span{color:#789b78}.sitebar a:last-child{font-size:12px;font-weight:600;text-decoration:none}
+.wrap{max-width:900px;margin:58px auto 90px;padding:0 28px}.kicker{font-size:10px;letter-spacing:2px;font-weight:700;color:#66836d;margin:0 0 14px;text-transform:uppercase}
+article{background:var(--white);border:1px solid var(--line);padding:clamp(24px,5vw,58px);box-shadow:0 15px 45px rgba(31,39,30,.045)}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif;line-height:1.2;letter-spacing:-.5px;color:#1d241e}
+h1{font-size:clamp(32px,5vw,48px);margin:0 0 25px}h2{font-size:27px;margin:42px 0 15px;padding-bottom:9px;border-bottom:1px solid var(--line)}h3{font-size:21px;margin:30px 0 12px}
+p{margin:0 0 17px;color:#4d534b}ul,ol{padding-left:25px;color:#4d534b}li{margin:5px 0}
+blockquote{margin:22px 0;padding:15px 20px;border-left:3px solid #89a98b;background:#f0f2eb;color:#646c60}blockquote p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:22px 0 28px;font-size:13px;display:block;overflow-x:auto}th,td{padding:11px 13px;text-align:left;border:1px solid #e5e6df;vertical-align:top}th{background:#edf1e9;color:#344638;font-weight:700}tr:nth-child(even) td{background:#fbfbf7}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#eff1ec;padding:2px 5px;border-radius:4px;font-size:.9em}pre{overflow:auto;background:#18211d;color:#edf3eb;padding:19px;border-radius:7px;line-height:1.55}pre code{background:none;color:inherit;padding:0}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}.pagefoot{max-width:900px;margin:-55px auto 45px;padding:0 28px;color:#888d82;font-size:11px;display:flex;justify-content:space-between;gap:20px}.pagefoot a{color:#55745e;text-decoration:none}
+@media(max-width:600px){.sitebar{height:60px;padding:0 20px}.wrap{margin:28px auto 70px;padding:0 14px}article{padding:24px 18px}h2{font-size:23px}.pagefoot{padding:0 16px;flex-direction:column}}
+</style></head><body>
+<header class="sitebar"><a class="brand" href="../../../../index.html">r<span>.</span> RJU BCA</a><a href="../../../../index.html">← Back to learning space</a></header>
+<main class="wrap"><p class="kicker">RJU BCA · STUDENT ARCHIVE</p><article><h1>Topic 1: Graphics Modes and Initialization</h1>
+<p><strong>Unit VIII | HCAC-104 Programming in C</strong></p>
+<h2>1. Introduction</h2>
+<p>A computer screen normally works in <strong>text mode</strong>, showing characters in a grid. To draw lines, circles and colours, the program switches the screen to <strong>graphics mode</strong>, where the display is a grid of tiny dots called <strong>pixels</strong>.</p>
+<h2>2. Screen Coordinates</h2>
+<ul>
+<li>The screen is a grid of pixels.</li>
+<li>The origin <code>(0, 0)</code> is the <strong>top-left</strong> corner.</li>
+<li><code>x</code> increases to the right and <code>y</code> increases <strong>downward</strong>.</li>
+<li>On a 640 x 480 screen the bottom-right pixel is <code>(639, 479)</code>.</li>
+</ul>
+<pre><code class="language-text">(0,0) ------------------&gt; x
+  |
+  |
+  v
+  y
+</code></pre>
+<h2>3. Graphics Drivers and Modes</h2>
+<p>A <strong>graphics driver</strong> is the code that talks to a type of display adapter. A <strong>graphics mode</strong> selects the resolution and number of colours for that driver. In Turbo C's BGI library, examples of drivers are CGA, EGA and VGA.</p>
+<table>
+<thead>
+<tr>
+  <th>Driver (BGI)</th>
+  <th>Typical use</th>
+  <th>Example resolution and colours</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>CGA</td>
+  <td>Old low-resolution adapters</td>
+  <td>320 x 200, 4 colours</td>
+</tr>
+<tr>
+  <td>EGA</td>
+  <td>Enhanced adapters</td>
+  <td>640 x 350, 16 colours</td>
+</tr>
+<tr>
+  <td>VGA</td>
+  <td>Common standard in BGI programs</td>
+  <td>640 x 480, 16 colours</td>
+</tr>
+</tbody>
+</table>
+<p>Instead of choosing a driver by hand, a program can use the constant <strong><code>DETECT</code></strong>, which asks the library to pick the best driver and highest mode available.</p>
+<h2>4. Initializing Graphics: <code>initgraph()</code></h2>
+<pre><code class="language-c">void initgraph(int *graphdriver, int *graphmode, char *pathtodriver);
+</code></pre>
+<table>
+<thead>
+<tr>
+  <th>Argument</th>
+  <th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>graphdriver</code></td>
+  <td>Address of an <code>int</code> holding the driver number (set it to <code>DETECT</code> for auto-detection)</td>
+</tr>
+<tr>
+  <td><code>graphmode</code></td>
+  <td>Address of an <code>int</code> that receives (or holds) the mode</td>
+</tr>
+<tr>
+  <td><code>pathtodriver</code></td>
+  <td>Folder containing the BGI driver files; <code>&quot;&quot;</code> means the current folder</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-c">int gd = DETECT, gm;
+initgraph(&amp;gd, &amp;gm, &quot;&quot;);        /* or &quot;C:\\TC\\BGI&quot; in classic Turbo C */
+</code></pre>
+<h2>5. Checking for Errors: <code>graphresult()</code></h2>
+<pre><code class="language-c">if (graphresult() != grOk) {
+    printf(&quot;Graphics error\n&quot;);
+    return 1;
+}
+</code></pre>
+<p><code>graphresult()</code> returns <code>grOk</code> when the last graphics operation succeeded; otherwise it returns an error code (for example when the driver file is not found).</p>
+<h2>6. Leaving Graphics Mode: <code>closegraph()</code></h2>
+<p><code>closegraph()</code> shuts down the graphics system and returns the screen to text mode. <code>getch()</code> (from <code>&lt;conio.h&gt;</code>) is used before it to pause until a key is pressed so the drawing stays visible.</p>
+<h2>7. Typical Program Skeleton</h2>
+<pre><code class="language-c">#include &lt;graphics.h&gt;
+#include &lt;conio.h&gt;
+
+int main(void)
+{
+    int gd = DETECT, gm;
+
+    initgraph(&amp;gd, &amp;gm, &quot;&quot;);
+    /* drawing statements go here */
+    getch();
+    closegraph();
+    return 0;
+}
+</code></pre>
+<h2>8. Useful Query Functions</h2>
+<table>
+<thead>
+<tr>
+  <th>Function</th>
+  <th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>getmaxx()</code></td>
+  <td>Largest x coordinate of the current mode</td>
+</tr>
+<tr>
+  <td><code>getmaxy()</code></td>
+  <td>Largest y coordinate</td>
+</tr>
+<tr>
+  <td><code>getmaxcolor()</code></td>
+  <td>Largest colour value</td>
+</tr>
+</tbody>
+</table>
+<h2>9. Exam-Oriented Answers</h2>
+<h3>5-mark: What is a graphics mode? Explain how graphics is initialized in C.</h3>
+<p>Text mode vs graphics mode, pixels and coordinates, <code>DETECT</code>, the syntax and arguments of <code>initgraph</code>, the <code>graphresult</code> check, <code>closegraph</code>, and the skeleton program.</p>
+<h3>5-mark: Explain <code>initgraph()</code> and <code>closegraph()</code>.</h3>
+<p>Give the syntax, the argument table and the role of each.</p>
+<h2>10. Summary</h2>
+<p>Graphics mode treats the screen as a grid of pixels with the origin at the top-left. A BGI program calls <code>initgraph</code> (usually with <code>DETECT</code>), checks <code>graphresult</code>, draws, waits for a key and calls <code>closegraph</code>.</p>
+<hr />
+<p><a href="Introduction.html">Back to Unit Introduction</a> | <a href="Topic-02-Graphics-Functions.html">Next: Graphics Functions</a></p>
+</article></main>
+<footer class="pagefoot"><span>Independent student-maintained learning resource · Not an official university publication</span><a href="../../../../index.html">Return to homepage ↑</a></footer>
+</body></html>

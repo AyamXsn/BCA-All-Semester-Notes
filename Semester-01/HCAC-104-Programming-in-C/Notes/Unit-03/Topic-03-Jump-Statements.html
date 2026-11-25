@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f6f2"><title>Topic 3: Jump Statements · RJU BCA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f7f6f2;--ink:#20251f;--muted:#74796f;--line:#e3e3da;--green:#64846d;--blue:#28647c;--white:#fffefa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.75 'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#286b80;text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:#1c4654}
+.sitebar{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(5vw,calc((100vw - 1100px)/2));background:rgba(255,254,250,.82)}
+.brand{font:600 22px Georgia,serif;color:#1c211c;text-decoration:none;letter-spacing:-1px}.brand span{color:#789b78}.sitebar a:last-child{font-size:12px;font-weight:600;text-decoration:none}
+.wrap{max-width:900px;margin:58px auto 90px;padding:0 28px}.kicker{font-size:10px;letter-spacing:2px;font-weight:700;color:#66836d;margin:0 0 14px;text-transform:uppercase}
+article{background:var(--white);border:1px solid var(--line);padding:clamp(24px,5vw,58px);box-shadow:0 15px 45px rgba(31,39,30,.045)}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif;line-height:1.2;letter-spacing:-.5px;color:#1d241e}
+h1{font-size:clamp(32px,5vw,48px);margin:0 0 25px}h2{font-size:27px;margin:42px 0 15px;padding-bottom:9px;border-bottom:1px solid var(--line)}h3{font-size:21px;margin:30px 0 12px}
+p{margin:0 0 17px;color:#4d534b}ul,ol{padding-left:25px;color:#4d534b}li{margin:5px 0}
+blockquote{margin:22px 0;padding:15px 20px;border-left:3px solid #89a98b;background:#f0f2eb;color:#646c60}blockquote p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:22px 0 28px;font-size:13px;display:block;overflow-x:auto}th,td{padding:11px 13px;text-align:left;border:1px solid #e5e6df;vertical-align:top}th{background:#edf1e9;color:#344638;font-weight:700}tr:nth-child(even) td{background:#fbfbf7}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#eff1ec;padding:2px 5px;border-radius:4px;font-size:.9em}pre{overflow:auto;background:#18211d;color:#edf3eb;padding:19px;border-radius:7px;line-height:1.55}pre code{background:none;color:inherit;padding:0}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}.pagefoot{max-width:900px;margin:-55px auto 45px;padding:0 28px;color:#888d82;font-size:11px;display:flex;justify-content:space-between;gap:20px}.pagefoot a{color:#55745e;text-decoration:none}
+@media(max-width:600px){.sitebar{height:60px;padding:0 20px}.wrap{margin:28px auto 70px;padding:0 14px}article{padding:24px 18px}h2{font-size:23px}.pagefoot{padding:0 16px;flex-direction:column}}
+</style></head><body>
+<header class="sitebar"><a class="brand" href="../../../../index.html">r<span>.</span> RJU BCA</a><a href="../../../../index.html">← Back to learning space</a></header>
+<main class="wrap"><p class="kicker">RJU BCA · STUDENT ARCHIVE</p><article><h1>Topic 3: Jump Statements</h1>
+<p><strong>Unit III | HCAC-104 Programming in C</strong></p>
+<h2>1. Introduction</h2>
+<p><strong>Jump statements</strong> transfer control to another part of the program without testing a condition at that point. The syllabus lists <code>goto</code>, <code>break</code>, <code>continue</code> and <code>exit</code>.</p>
+<h2>2. <code>break</code></h2>
+<p><code>break</code> immediately ends the nearest enclosing loop or <code>switch</code>.</p>
+<pre><code class="language-c">for (i = 1; i &lt;= 10; i++) {
+    if (i == 6)
+        break;
+    printf(&quot;%d &quot;, i);
+}
+/* Output: 1 2 3 4 5 */
+</code></pre>
+<p>Common uses: leave a loop when the answer is found (for example, a divisor in a prime test, see <a href="../../Programs/Program-18-Prime-Number-Check/README.html">Program 18</a>), and end each <code>case</code> in a <code>switch</code>.</p>
+<h2>3. <code>continue</code></h2>
+<p><code>continue</code> skips the remaining statements of the <strong>current pass</strong> and moves to the next one. In a <code>for</code> loop it jumps to the update expression; in <code>while</code> and <code>do-while</code> it jumps to the condition test.</p>
+<pre><code class="language-c">for (i = 1; i &lt;= 5; i++) {
+    if (i == 3)
+        continue;
+    printf(&quot;%d &quot;, i);
+}
+/* Output: 1 2 4 5 */
+</code></pre>
+<p>Tested together with <code>break</code>: <a href="../../Programs/Program-20-Break-and-Continue-Demo/README.html">Program 20</a>.</p>
+<h3>3.1 <code>break</code> vs <code>continue</code></h3>
+<table>
+<thead>
+<tr>
+  <th>Basis</th>
+  <th><code>break</code></th>
+  <th><code>continue</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Effect</td>
+  <td>Terminates the loop (or <code>switch</code>)</td>
+  <td>Skips the current iteration only</td>
+</tr>
+<tr>
+  <td>After it</td>
+  <td>Execution goes to the statement after the loop</td>
+  <td>Loop continues with the next iteration</td>
+</tr>
+<tr>
+  <td>Works in <code>switch</code></td>
+  <td>Yes</td>
+  <td>No (only loops)</td>
+</tr>
+</tbody>
+</table>
+<h2>4. <code>goto</code></h2>
+<p><code>goto label;</code> jumps to a statement marked by <code>label:</code> in the same function.</p>
+<pre><code class="language-c">read_next:
+    scanf(&quot;%d&quot;, &amp;n);
+    if (n &gt;= 0) {
+        sum += n;
+        goto read_next;
+    }
+</code></pre>
+<p>Tested: <a href="../../Programs/Program-21-Goto-Statement-Demo/README.html">Program 21</a>.</p>
+<p><strong>Why <code>goto</code> is discouraged.</strong> It makes the flow hard to follow (&quot;spaghetti code&quot;) and harder to debug. Structured loops and functions are almost always clearer. A legitimate use is leaving several nested loops at once or jumping to common clean-up code.</p>
+<h2>5. <code>exit()</code></h2>
+<p><code>exit(status)</code> (declared in <code>&lt;stdlib.h&gt;</code>) ends the <strong>whole program</strong> at once, wherever it is called.</p>
+<pre><code class="language-c">#include &lt;stdlib.h&gt;
+
+if (fp == NULL) {
+    printf(&quot;Cannot open file\n&quot;);
+    exit(1);        /* non-zero: abnormal termination */
+}
+</code></pre>
+<p><code>exit(0)</code> (or <code>EXIT_SUCCESS</code>) means success; a non-zero value (or <code>EXIT_FAILURE</code>) means an error. Open files are closed and buffered output is flushed.</p>
+<h3>5.1 <code>break</code> vs <code>exit</code></h3>
+<table>
+<thead>
+<tr>
+  <th>Basis</th>
+  <th><code>break</code></th>
+  <th><code>exit()</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Ends</td>
+  <td>Only the current loop or <code>switch</code></td>
+  <td>The entire program</td>
+</tr>
+<tr>
+  <td>Needs header</td>
+  <td>No</td>
+  <td><code>&lt;stdlib.h&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2>6. Exam-Oriented Answers</h2>
+<h3>5-mark: Explain <code>break</code> and <code>continue</code> with examples.</h3>
+<p>Definitions, two short examples with output, and the comparison table.</p>
+<h3>5-mark: What is the <code>goto</code> statement? Why is it avoided?</h3>
+<p>Syntax with a label, the example, and the disadvantages (hard-to-read, unstructured flow).</p>
+<h3>10-mark: Explain the jump statements of C.</h3>
+<p>Cover all four statements with syntax, examples and outputs, the two comparison tables, and a short conclusion that structured loops are preferred.</p>
+<h2>7. Summary</h2>
+<p><code>break</code> leaves a loop or <code>switch</code>, <code>continue</code> skips to the next pass, <code>goto</code> jumps to a label and <code>exit()</code> ends the program. Use them sparingly and prefer clear structured code.</p>
+<hr />
+<p><a href="Topic-02-Looping-Statements.html">Previous: Looping Statements</a> | <a href="Introduction.html">Back to Unit Introduction</a></p>
+</article></main>
+<footer class="pagefoot"><span>Independent student-maintained learning resource · Not an official university publication</span><a href="../../../../index.html">Return to homepage ↑</a></footer>
+</body></html>

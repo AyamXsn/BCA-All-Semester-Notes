@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f6f2"><title>Topic 1: Structures · RJU BCA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f7f6f2;--ink:#20251f;--muted:#74796f;--line:#e3e3da;--green:#64846d;--blue:#28647c;--white:#fffefa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.75 'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#286b80;text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:#1c4654}
+.sitebar{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(5vw,calc((100vw - 1100px)/2));background:rgba(255,254,250,.82)}
+.brand{font:600 22px Georgia,serif;color:#1c211c;text-decoration:none;letter-spacing:-1px}.brand span{color:#789b78}.sitebar a:last-child{font-size:12px;font-weight:600;text-decoration:none}
+.wrap{max-width:900px;margin:58px auto 90px;padding:0 28px}.kicker{font-size:10px;letter-spacing:2px;font-weight:700;color:#66836d;margin:0 0 14px;text-transform:uppercase}
+article{background:var(--white);border:1px solid var(--line);padding:clamp(24px,5vw,58px);box-shadow:0 15px 45px rgba(31,39,30,.045)}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif;line-height:1.2;letter-spacing:-.5px;color:#1d241e}
+h1{font-size:clamp(32px,5vw,48px);margin:0 0 25px}h2{font-size:27px;margin:42px 0 15px;padding-bottom:9px;border-bottom:1px solid var(--line)}h3{font-size:21px;margin:30px 0 12px}
+p{margin:0 0 17px;color:#4d534b}ul,ol{padding-left:25px;color:#4d534b}li{margin:5px 0}
+blockquote{margin:22px 0;padding:15px 20px;border-left:3px solid #89a98b;background:#f0f2eb;color:#646c60}blockquote p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:22px 0 28px;font-size:13px;display:block;overflow-x:auto}th,td{padding:11px 13px;text-align:left;border:1px solid #e5e6df;vertical-align:top}th{background:#edf1e9;color:#344638;font-weight:700}tr:nth-child(even) td{background:#fbfbf7}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#eff1ec;padding:2px 5px;border-radius:4px;font-size:.9em}pre{overflow:auto;background:#18211d;color:#edf3eb;padding:19px;border-radius:7px;line-height:1.55}pre code{background:none;color:inherit;padding:0}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}.pagefoot{max-width:900px;margin:-55px auto 45px;padding:0 28px;color:#888d82;font-size:11px;display:flex;justify-content:space-between;gap:20px}.pagefoot a{color:#55745e;text-decoration:none}
+@media(max-width:600px){.sitebar{height:60px;padding:0 20px}.wrap{margin:28px auto 70px;padding:0 14px}article{padding:24px 18px}h2{font-size:23px}.pagefoot{padding:0 16px;flex-direction:column}}
+</style></head><body>
+<header class="sitebar"><a class="brand" href="../../../../index.html">r<span>.</span> RJU BCA</a><a href="../../../../index.html">← Back to learning space</a></header>
+<main class="wrap"><p class="kicker">RJU BCA · STUDENT ARCHIVE</p><article><h1>Topic 1: Structures</h1>
+<p><strong>Unit VI | HCAC-104 Programming in C</strong></p>
+<h2>1. Introduction</h2>
+<h3>1.1 Definition</h3>
+<p>A <strong>structure</strong> is a user-defined data type that groups variables of <strong>different data types</strong> under one name. Each variable inside is a <strong>member</strong> (or field).</p>
+<h3>1.2 Why Structures?</h3>
+<p>A student has a roll number (<code>int</code>), a name (<code>char</code> array) and marks (<code>float</code>). Keeping them in three separate variables is untidy; a structure keeps one student's data together.</p>
+<h2>2. Defining a Structure</h2>
+<pre><code class="language-c">struct Student {
+    int   roll;
+    char  name[50];
+    float marks;
+};                      /* the semicolon is required */
+</code></pre>
+<p>This defines a <strong>new type</strong> <code>struct Student</code>; it reserves no memory yet.</p>
+<h2>3. Declaring Variables</h2>
+<pre><code class="language-c">struct Student s1, s2;                 /* after the definition */
+
+struct Point { int x, y; } p1, p2;     /* together with the definition */
+</code></pre>
+<p>With <code>typedef</code> the keyword <code>struct</code> can be dropped:</p>
+<pre><code class="language-c">typedef struct {
+    int roll;
+    float marks;
+} Student;
+
+Student s3;
+</code></pre>
+<h2>4. Initialization</h2>
+<pre><code class="language-c">struct Student s1 = {1, &quot;Sita&quot;, 78.5f};          /* in member order */
+struct Student s2 = {.roll = 2, .marks = 60.0f}; /* designated (C99); name becomes empty */
+</code></pre>
+<h2>5. Accessing Members: The Dot Operator</h2>
+<pre><code class="language-c">s1.roll = 5;
+s1.marks += 5;
+strcpy(s1.name, &quot;Hari&quot;);          /* strings need strcpy, not = */
+printf(&quot;%s %d\n&quot;, s1.name, s1.roll);
+</code></pre>
+<p>Important: a <code>char</code> array member cannot be assigned with <code>=</code>; use <code>strcpy</code> or <code>scanf</code>/<code>fgets</code>.</p>
+<p>Whole structures <strong>can</strong> be copied: <code>s2 = s1;</code> copies every member.</p>
+<p>Tested: <a href="../../Programs/Program-39-Student-Structure/README.html">Program 39: Student Structure</a>.</p>
+<h2>6. Memory of a Structure</h2>
+<p>Members are stored one after another, but the compiler may insert <strong>padding</strong> bytes for alignment, so <code>sizeof(struct)</code> can be larger than the sum of the member sizes. Always use <code>sizeof</code>.</p>
+<h2>7. Nested Structures</h2>
+<p>A structure may contain another structure.</p>
+<pre><code class="language-c">struct Date { int day, month, year; };
+struct Person {
+    char name[30];
+    struct Date dob;            /* nested structure */
+};
+
+struct Person p;
+p.dob.year = 2005;
+</code></pre>
+<h2>8. Array vs Structure</h2>
+<table>
+<thead>
+<tr>
+  <th>Basis</th>
+  <th>Array</th>
+  <th>Structure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Element types</td>
+  <td>All the same</td>
+  <td>Can differ</td>
+</tr>
+<tr>
+  <td>Access</td>
+  <td>By index <code>a[i]</code></td>
+  <td>By member name <code>s.roll</code></td>
+</tr>
+<tr>
+  <td>Keyword</td>
+  <td>None</td>
+  <td><code>struct</code></td>
+</tr>
+<tr>
+  <td>Memory</td>
+  <td>Contiguous, same size items</td>
+  <td>Members possibly padded</td>
+</tr>
+</tbody>
+</table>
+<h2>9. Exam-Oriented Answers</h2>
+<h3>5-mark: What is a structure? How is it defined and accessed?</h3>
+<p>Definition, syntax with the <code>Student</code> example, declaring variables, the dot operator, and an example program (Program 39).</p>
+<h3>5-mark: Differentiate between an array and a structure.</h3>
+<p>Use the table in section 8.</p>
+<h2>10. Summary</h2>
+<p>A structure groups related data of different types. Define it with <code>struct</code>, create variables from it, and access members with the dot operator.</p>
+<hr />
+<p><a href="Introduction.html">Back to Unit Introduction</a> | <a href="Topic-02-Structures-Arrays-Functions-and-Pointers.html">Next: Arrays of Structures, Functions and Pointers</a></p>
+</article></main>
+<footer class="pagefoot"><span>Independent student-maintained learning resource · Not an official university publication</span><a href="../../../../index.html">Return to homepage ↑</a></footer>
+</body></html>

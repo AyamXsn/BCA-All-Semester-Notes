@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f6f2"><title>Topic 1: Arrays · RJU BCA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f7f6f2;--ink:#20251f;--muted:#74796f;--line:#e3e3da;--green:#64846d;--blue:#28647c;--white:#fffefa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.75 'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#286b80;text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:#1c4654}
+.sitebar{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(5vw,calc((100vw - 1100px)/2));background:rgba(255,254,250,.82)}
+.brand{font:600 22px Georgia,serif;color:#1c211c;text-decoration:none;letter-spacing:-1px}.brand span{color:#789b78}.sitebar a:last-child{font-size:12px;font-weight:600;text-decoration:none}
+.wrap{max-width:900px;margin:58px auto 90px;padding:0 28px}.kicker{font-size:10px;letter-spacing:2px;font-weight:700;color:#66836d;margin:0 0 14px;text-transform:uppercase}
+article{background:var(--white);border:1px solid var(--line);padding:clamp(24px,5vw,58px);box-shadow:0 15px 45px rgba(31,39,30,.045)}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif;line-height:1.2;letter-spacing:-.5px;color:#1d241e}
+h1{font-size:clamp(32px,5vw,48px);margin:0 0 25px}h2{font-size:27px;margin:42px 0 15px;padding-bottom:9px;border-bottom:1px solid var(--line)}h3{font-size:21px;margin:30px 0 12px}
+p{margin:0 0 17px;color:#4d534b}ul,ol{padding-left:25px;color:#4d534b}li{margin:5px 0}
+blockquote{margin:22px 0;padding:15px 20px;border-left:3px solid #89a98b;background:#f0f2eb;color:#646c60}blockquote p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:22px 0 28px;font-size:13px;display:block;overflow-x:auto}th,td{padding:11px 13px;text-align:left;border:1px solid #e5e6df;vertical-align:top}th{background:#edf1e9;color:#344638;font-weight:700}tr:nth-child(even) td{background:#fbfbf7}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#eff1ec;padding:2px 5px;border-radius:4px;font-size:.9em}pre{overflow:auto;background:#18211d;color:#edf3eb;padding:19px;border-radius:7px;line-height:1.55}pre code{background:none;color:inherit;padding:0}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}.pagefoot{max-width:900px;margin:-55px auto 45px;padding:0 28px;color:#888d82;font-size:11px;display:flex;justify-content:space-between;gap:20px}.pagefoot a{color:#55745e;text-decoration:none}
+@media(max-width:600px){.sitebar{height:60px;padding:0 20px}.wrap{margin:28px auto 70px;padding:0 14px}article{padding:24px 18px}h2{font-size:23px}.pagefoot{padding:0 16px;flex-direction:column}}
+</style></head><body>
+<header class="sitebar"><a class="brand" href="../../../../index.html">r<span>.</span> RJU BCA</a><a href="../../../../index.html">← Back to learning space</a></header>
+<main class="wrap"><p class="kicker">RJU BCA · STUDENT ARCHIVE</p><article><h1>Topic 1: Arrays</h1>
+<p><strong>Unit V | HCAC-104 Programming in C</strong></p>
+<h2>1. Introduction</h2>
+<h3>1.1 Definition</h3>
+<p>An <strong>array</strong> is a collection of elements of the <strong>same data type</strong> stored in <strong>contiguous (adjacent) memory locations</strong> and accessed by a common name and an index.</p>
+<h3>1.2 Why Arrays?</h3>
+<p>Storing 100 marks needs 100 variables without arrays. With an array, <code>int marks[100];</code> stores them all and a loop can process them.</p>
+<h3>1.3 Characteristics</h3>
+<ol>
+<li>All elements have the same type.</li>
+<li>Elements are stored one after another in memory.</li>
+<li>The index starts at <strong>0</strong>; the last index is <code>size - 1</code>.</li>
+<li>The size is fixed when the array is declared.</li>
+<li>Elements are accessed in constant time by index.</li>
+</ol>
+<h2>2. Declaration, Initialization and Access</h2>
+<pre><code class="language-c">int marks[5];                       /* declaration: 5 integers, indexes 0..4 */
+int a[5] = {10, 20, 30, 40, 50};    /* full initialization */
+int b[5] = {1, 2};                  /* remaining elements become 0 */
+int c[] = {5, 6, 7};                /* size 3 is deduced */
+
+a[0] = 99;                          /* write */
+printf(&quot;%d&quot;, a[2]);                 /* read: prints 30 */
+</code></pre>
+<p>Memory picture of <code>a</code> (addresses illustrative, <code>int</code> = 4 bytes):</p>
+<pre><code class="language-text">index :   0     1     2     3     4
+value :  [99]  [20]  [30]  [40]  [50]
+addr  :  1000  1004  1008  1012  1016
+</code></pre>
+<h2>3. Reading and Printing with Loops</h2>
+<pre><code class="language-c">int a[5], i;
+for (i = 0; i &lt; 5; i++)
+    scanf(&quot;%d&quot;, &amp;a[i]);
+for (i = 0; i &lt; 5; i++)
+    printf(&quot;%d &quot;, a[i]);
+</code></pre>
+<h2>4. Important Warning: No Bounds Checking</h2>
+<p>C does not check that an index is valid. Writing <code>a[5]</code> for a 5-element array changes memory that does not belong to the array and causes unpredictable behaviour. Always keep the index in <code>0</code> to <code>size - 1</code> and validate user-supplied sizes.</p>
+<h2>5. Common Operations</h2>
+<table>
+<thead>
+<tr>
+  <th>Operation</th>
+  <th>Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Sum / average</td>
+  <td>Add elements in a loop</td>
+</tr>
+<tr>
+  <td>Largest / smallest</td>
+  <td>Start with <code>a[0]</code> and compare</td>
+</tr>
+<tr>
+  <td>Search</td>
+  <td>Compare each element with the key (linear search)</td>
+</tr>
+<tr>
+  <td>Sort</td>
+  <td>Repeatedly compare and swap (for example bubble sort)</td>
+</tr>
+<tr>
+  <td>Reverse</td>
+  <td>Swap <code>a[i]</code> with <code>a[n-1-i]</code> for the first half</td>
+</tr>
+</tbody>
+</table>
+<p>Tested programs: <a href="../../Programs/Program-28-Array-Sum-Average-Max-Min/README.html">28 Sum, Average, Max, Min</a> and <a href="../../Programs/Program-29-Bubble-Sort/README.html">29 Bubble Sort</a>.</p>
+<h3>5.1 Bubble Sort Idea</h3>
+<pre><code class="language-text">64 25 12 22 11   pass 1 -&gt;  25 12 22 11 64
+                 pass 2 -&gt;  12 22 11 25 64
+                 pass 3 -&gt;  12 11 22 25 64
+                 pass 4 -&gt;  11 12 22 25 64   sorted
+</code></pre>
+<h2>6. Advantages and Disadvantages</h2>
+<table>
+<thead>
+<tr>
+  <th>Advantages</th>
+  <th>Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Fast access by index</td>
+  <td>Size is fixed</td>
+</tr>
+<tr>
+  <td>Simple to use with loops</td>
+  <td>Insertion and deletion in the middle are slow</td>
+</tr>
+<tr>
+  <td>Memory is contiguous</td>
+  <td>Same type only</td>
+</tr>
+<tr>
+  <td>Basis of strings and matrices</td>
+  <td>No bounds checking</td>
+</tr>
+</tbody>
+</table>
+<h2>7. Exam-Oriented Answers</h2>
+<h3>5-mark: What is an array? Explain declaration and initialization.</h3>
+<p>Definition, characteristics, the declaration and initialization forms, and a short example that reads and prints.</p>
+<h3>5-mark: Write a program to find the largest element of an array.</h3>
+<p>Use <a href="../../Programs/Program-28-Array-Sum-Average-Max-Min/README.html">Program 28</a> with its sample output.</p>
+<h2>8. Summary</h2>
+<p>An array stores same-type elements contiguously and uses zero-based indexes. It is processed with loops, but its size is fixed and C does not guard against invalid indexes.</p>
+<hr />
+<p><a href="Introduction.html">Back to Unit Introduction</a> | <a href="Topic-02-Multi-Dimensional-Arrays.html">Next: Multi-Dimensional Arrays</a></p>
+</article></main>
+<footer class="pagefoot"><span>Independent student-maintained learning resource · Not an official university publication</span><a href="../../../../index.html">Return to homepage ↑</a></footer>
+</body></html>
