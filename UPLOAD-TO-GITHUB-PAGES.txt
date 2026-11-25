@@ -1,0 +1,21 @@
+GITHUB PAGES DEPLOYMENT
+
+This ZIP is already arranged with index.html at the ROOT of the repository.
+Do not upload the enclosing folder as an extra nested directory.
+
+1. Extract this ZIP.
+2. Open your existing GitHub repository.
+3. Upload the CONTENTS of the extracted folder (not the folder itself) to the repository root.
+4. Ensure these paths appear at the same level:
+   index.html
+   assets/css/style.css
+   assets/js/main.js
+   assets/img/study-collage.svg
+   README.md
+   Semester-01/ ... Semester-08/
+5. Commit and push.
+6. In Settings > Pages, choose Deploy from a branch, select your branch and /(root).
+
+If you already uploaded the files into a subfolder, move index.html and the assets folder to the repository root, or configure Pages to publish that subfolder.
+
+The CSS file is linked using a relative path: assets/css/style.css.
