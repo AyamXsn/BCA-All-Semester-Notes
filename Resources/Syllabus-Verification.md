@@ -8,9 +8,9 @@ No authoritative current RJU BCA semester-wise syllabus has been supplied or ver
 
 | Semester | Subject list confirmed | Evidence |
 |---|---|---|
-| 1 | No | Official document required |
-| 2 | No | Official document required |
-| 3 | No | Official document required |
+| 1 | 5 | Official document |
+| 2 | 5 | Official document |
+| 3 | 5 | Official document |
 | 4 | No | Official document required |
 | 5 | No | Official document required |
 | 6 | No | Official document required |
